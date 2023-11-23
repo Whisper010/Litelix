@@ -246,10 +246,17 @@
 			isa = PBXGroup;
 			children = (
 				231A9EBC2B029EEA000963C8 /* DiscoveryView.swift */,
-				23C375122B04C6F30011C454 /* MediaDetailView.swift */,
 				23C3750A2B039EFB0011C454 /* TrendingCard.swift */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		23AE3CE92B0FFFF100D5D758 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				23C375122B04C6F30011C454 /* MediaDetailView.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		23C375102B039F8F0011C454 /* Model */ = {
@@ -269,6 +276,7 @@
 				238FF0FE2B0B64A800259CDA /* Home */,
 				2346CDD12B0D491400B59613 /* New&Hot */,
 				2346CDDB2B0DFF7C00B59613 /* MyLitelix */,
+				23AE3CE92B0FFFF100D5D758 /* Details */,
 			);
 			path = View;
 			sourceTree = "<group>";
