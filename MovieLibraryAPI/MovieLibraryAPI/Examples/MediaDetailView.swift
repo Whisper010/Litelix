@@ -27,7 +27,7 @@ struct MediaDetailView: View {
         
         
         ZStack{
-            Color(red: 39/255,green: 40/255,blue: 59/255).ignoresSafeArea()
+            Color.brighten(hex: 0x000000, percentage: 0.05).ignoresSafeArea()
             
             VStack{
                 AsyncImage(url: media.backdropURL){ image in
@@ -54,6 +54,7 @@ struct MediaDetailView: View {
                         Text(media.media_type == "movie"  ? media.title ?? "" : media.name ?? "")
                             .font(.title)
                             .fontWeight(.heavy)
+                            .shadow(radius: 10)
                         Spacer()
                         //ratings here
                     }
@@ -64,9 +65,10 @@ struct MediaDetailView: View {
                     }
                     
                     HStack{
-                        Text("AboutFilm")
+                        Text("Overview")
                             .font(.title3)
                             .fontWeight(.bold)
+                            .shadow(radius: 10)
                         Spacer()
                         //see all button
                     }
@@ -79,6 +81,7 @@ struct MediaDetailView: View {
                         Text("Cast & Crew")
                             .font(.title3)
                             .fontWeight(.bold)
+                            .shadow(radius: 10)
                         Spacer()
                     }
                     

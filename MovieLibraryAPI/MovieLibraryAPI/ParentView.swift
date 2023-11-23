@@ -40,8 +40,7 @@ struct ParentView: View {
                     .tabItem {
                         VStack{
                             Image(systemName: "square.fill")
-                                
-                            Text("My Litelix")
+                                Text("My Litelix")
                         }
                         
                     }

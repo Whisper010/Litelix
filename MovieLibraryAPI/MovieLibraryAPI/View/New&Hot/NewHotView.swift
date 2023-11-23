@@ -29,7 +29,7 @@ struct NewHotView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     @State private var selectedSegment = 0
-   
+    @State private var contentLoaded = false
     
     let categories: [CategoryItem] = [
         CategoryItem(name: Categories.comingSoon.rawValue, iconName: "popcorn.fill", primaryColor: .yellow , secondaryColor: .clear),
@@ -40,13 +40,15 @@ struct NewHotView: View {
     
     var body: some View {
         NavigationStack{
-           
+            
             ScrollView(.horizontal,showsIndicators: false){
                 
                 HStack{
                     ForEach(0..<categories.count, id:\.self){index in
                         Button(action: {
-                            self.selectedSegment = index
+                            withAnimation{
+                                self.selectedSegment = index
+                            }
                         }){
                             HStack{
                                 
@@ -55,105 +57,111 @@ struct NewHotView: View {
                                 Text(self.categories[index].name)
                                     .foregroundStyle((self.selectedSegment == index ? Color.black : Color.white))
                                 
-                                    
+                                
                             }.padding([.leading, .trailing])
                                 .padding([.top,.bottom], screenHeight * 0.005)
                                 .background(RoundedRectangle(cornerRadius: 25.0).fill(self.selectedSegment == index ? Color.white : Color.clear))
                                 .bold()
                             
-                                
+                            
                         }
                     }
                 }.padding()
             }
-            VStack(spacing: 12){
-                ScrollView(showsIndicators: false){
-                    VStack{
-                        HStack{
-                            Image(systemName: categories[0].iconName)
-                                .foregroundStyle(categories[0].primaryColor, categories[0].secondaryColor)
-                            Text(categories[0].name)
-                                .bold()
-                                .font(.title2)
-                            Spacer()
-                        }.padding()
+            
+            ScrollViewReader{ scrollReader in
+                VStack(spacing: 12){
+                    ScrollView(showsIndicators: false){
                         
-                       
-                        ForEach(viewModel.upcomingMovies){ media in
-                            NewHotMediaCard(media: media,category: .comingSoon)
-                        }
-                        HStack{
-                            Image(systemName: categories[1].iconName)
-                                .foregroundStyle(categories[1].primaryColor,categories[1].secondaryColor)
-                            Text(categories[1].name)
-                                .bold()
-                                .font(.title2)
-                            Spacer()
-                        }.padding()
-                        ForEach(viewModel.onTheAirTVs){ media in
-                            NewHotMediaCard(media: media, category: .everyoneWatching)
-                        }
-                        
-                        HStack{
-                            Image(systemName: categories[2].iconName)
-                                .foregroundStyle(categories[2].primaryColor,categories[2].secondaryColor)
-                            Text(categories[2].name)
-                                .bold()
-                                .font(.title2)
-                            Spacer()
-                        }.padding()
-                        
-                        
-                       
-                        
-                        ForEach(viewModel.ratedTVs.indices, id: \.self) { index in
-                            HStack {
-                                if index < 10 {
-                                    NewHotMediaCard(media: viewModel.ratedTVs[index], category: .topTV, topIndex: index + 1)
-                                }
+                        VStack{
+                            
+                            ForEach(categories.indices, id: \.self){ index in
+                                Section(header: Text(categories[index].name)
+                                    .bold()
+                                    .font(.title2)
+                                    .padding()
+                                    .frame(width: screenWidth, alignment: .leading)
+                                    .background(GeometryReader{
+                                        Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .global).minY)
+                                    })
+                                )
+                            {
+                                    if index == 0 {
+                                        ForEach(viewModel.upcomingMovies) { media in
+                                            NewHotMediaCard(media: media, category: .comingSoon)
+                                        }
+                                    } else if index == 1 {
+                                        ForEach(viewModel.onTheAirTVs) { media in
+                                            NewHotMediaCard(media: media, category: .everyoneWatching)
+                                        }
+                                    } else if index == 2 {
+                                        ForEach(viewModel.ratedTVs.indices, id: \.self) { idx in
+                                            if idx < 10 {
+                                                NewHotMediaCard(media: viewModel.ratedTVs[idx], category: .topTV, topIndex: idx + 1)
+                                            }
+                                        }
+                                    } else if index == 3 {
+                                        ForEach(viewModel.ratedMovies.indices, id: \.self) { idx in
+                                            if idx < 10 {
+                                                NewHotMediaCard(media: viewModel.ratedMovies[idx], category: .topMovie, topIndex: idx + 1)
+                                            }
+                                        }
+                                    }
+                                }.id(index)
                             }
+                            
+                                              
+                            
                         }
                         
-                        HStack{
-                            Image(systemName: categories[3].iconName)
-                                .foregroundStyle(categories[3].primaryColor,categories[3].secondaryColor)
-                            Text(categories[3].name)
-                                .bold()
-                                .font(.title2)
-                            Spacer()
-                        }.padding()
-                        ForEach(viewModel.ratedMovies.indices, id: \.self){ index in
-                            if index < 10{
-                                NewHotMediaCard(media: viewModel.ratedMovies[index], category: .topMovie, topIndex: index + 1)
-                            }
-                        }
                         
                     }
                 }
-            }.onAppear{
-                Task{
-                    await viewModel.loadUpcomingMovies()
-                    await viewModel.loadOnTheAirTVs()
-                    await viewModel.loadRated(mediaType: .movie)
-                    await viewModel.loadRated(mediaType: .tv)
+                .onChange(of: selectedSegment){ newIndex in
+                    DispatchQueue.main.async {
+                        withAnimation{
+                            scrollReader.scrollTo(newIndex, anchor: .top)
+                        }
+                    }
+                    
                 }
-            }
-            
-            .toolbar{
-                ToolbarItem(placement: .topBarLeading){
-                    Text("For You")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        .padding()
+                
+                
+                .onAppear{
+                    Task{
+                        await viewModel.loadUpcomingMovies()
+                        await viewModel.loadOnTheAirTVs()
+                        await viewModel.loadRated(mediaType: .movie)
+                        await viewModel.loadRated(mediaType: .tv)
+
+                        contentLoaded = true
+                    }
+                }
+                
+                .toolbar{
+                    ToolbarItem(placement: .topBarLeading){
+                        Text("For You")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .padding()
+                        
+                    }
                     
                 }
                 
             }
             
+            
         }
-        
-        
     }
+    
+    struct ViewOffsetKey: PreferenceKey {
+        static var defaultValue: Double = 0
+        static func reduce(value: inout Double,nextValue: () -> Double){
+            value += nextValue()
+        }
+    }
+    
     
     
     

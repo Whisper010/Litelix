@@ -86,41 +86,40 @@ struct HomeView: View {
                     }else {
                         LazyVStack{
                             ForEach(viewModel.searchResults) { item in
-                                HStack{
-                                    AsyncImage(url: item.posterThumbnail){ image in
-                                        image
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 80,height: 120)
-                                        
-                                    }placeholder: {
-                                        ProgressView()
-                                            .frame(width: 80,height: 120)
-                                    }
-                                    .clipped()
-                                    .cornerRadius(10.0)
-                                    VStack(alignment: .leading){
-                                        
-                                        Text(item.titleName)
-                                            .foregroundColor(.white)
-                                            .fontWeight(.heavy)
-                                            .font(.headline)
-                                        
-                                        Text("Adult: "+String(item.adult))
-                                        
-                                        HStack{
-                                            Image(systemName: "hand.thumbsup.fill")
-                                            Text("\(item.vote_average, specifier: "%.1f")" )
-                                            Spacer()
+                                NavigationLink(destination: MediaDetailView(media: item)){
+                                    HStack{
+                                        AsyncImage(url: item.posterThumbnail){ image in
+                                            image
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 80,height: 120)
+                                            
+                                        }placeholder: {
+                                            ProgressView()
+                                                .frame(width: 80,height: 120)
                                         }
-                                        .foregroundColor(.yellow)
-                                        .fontWeight(.heavy)
-                                    }.padding()
-                                    
-                                    Spacer()
-                                    
-                                }.padding(.horizontal)
-                                
+                                        .clipped()
+                                        .cornerRadius(10.0)
+                                        VStack(alignment: .leading){
+                                            
+                                            Text(item.titleName)
+                                                .foregroundColor(.white)
+                                                .fontWeight(.heavy)
+                                                .font(.headline)
+                                            
+                                            HStack{
+                                                Image(systemName: "hand.thumbsup.fill")
+                                                Text("\(item.vote_average, specifier: "%.1f")" )
+                                                Spacer()
+                                            }
+                                            .foregroundColor(Color.brighten(hex: 0xCD2F26,percentage: 0.3))
+                                            .fontWeight(.heavy)
+                                        }.padding()
+                                        
+                                        Spacer()
+                                        
+                                    }.padding(.horizontal)
+                                }
                             }
                         }
                     }
