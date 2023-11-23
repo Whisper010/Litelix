@@ -70,6 +70,7 @@ struct HomeView: View {
                         VStack{
                             RecommendationPoster(media: viewModel.airingTVs.last)
                                 
+                                
                             MovieListView(collection: $viewModel.trendingTVs, titleText: "Trending TV Shows")
                             MovieListView(collection: $viewModel.trendingMovies, titleText: "Trending Movies")
                             

@@ -78,6 +78,7 @@ struct LoginView: View {
                                     }, label: {
                                         Text("Learn more.")
                                             .fontWeight(.bold)
+                                            
                                         
                                         
                                     }).offset(CGSize(width:  geometry.size.width*0.174, height: geometry.size.height*0.25 ))
@@ -147,7 +148,7 @@ struct LoginView: View {
                 }
                
             }
-        }
+        }.accessibilityLabel("Navigated to Autherisation to account")
       
     }
     

@@ -22,6 +22,7 @@ struct RecommendationPoster: View {
                     .frame(width: screenWidth * 0.85 , height: screenHeight * 0.55)
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    .accessibilityLabel(media?.titleName ?? "")
                 
             }placeholder: {
                 ZStack{

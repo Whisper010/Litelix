@@ -3,7 +3,7 @@
 //  Litelix
 //
 //  Created by Linar Zinatullin on 16/11/23.
-//
+// A
 
 import SwiftUI
 
@@ -28,7 +28,7 @@ struct Intro: View {
             .onAppear{
                 UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color(hex: 0xD22F27))
             }
-            
+            .accessibilityLabel("Swipe to continue")
             
             ZStack{
                 
@@ -50,6 +50,7 @@ struct Intro: View {
                     Text("Litelix")
                         .foregroundStyle(Color(hex: 0xD22F27))
                         .fontWeight(.heavy)
+                        .accessibilityLabel("Lite lix")
                 }
                 ToolbarItemGroup(placement:.topBarTrailing){
                     Text("Privacy")
@@ -65,7 +66,7 @@ struct Intro: View {
             
             
             
-        }
+        }.accessibilityLabel("Navigated to Introduction to Lite lix")
         
         
         
@@ -85,17 +86,19 @@ struct IntroCard: View{
                 .frame(maxWidth: 300,maxHeight: 300)
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                .accessibilityLabel("Image of \(intro.Image)")
+                .accessibilityLabel("\(intro.Image)")
             
             Text(intro.Text.Mainline)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
+                .accessibilityLabel(intro.Text.Mainline)
             
             Text(intro.Text.SubLine)
                 .font(.title3)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
+                .accessibilityLabel(intro.Text.SubLine)
            
             
         }
@@ -111,9 +114,9 @@ struct IntroModel: Identifiable{
 
 struct IntroViewModel{
     let intros: [IntroModel] = [
-        IntroModel(Image: "watchEverywhere", Text: (Mainline: "Watch\neverywhere", SubLine: "Stream on your phone, tablet,\nlaptop and TV.")),
-        IntroModel(Image: "payBox", Text: (Mainline: "There's a plan\nfor every fan", SubLine: "Small price. Big Entertainment\n")),
-        IntroModel(Image: "cancelOnline", Text: (Mainline: "Cancel online\nanytime", SubLine: "Join today, no reason to wait.\n")),
+        IntroModel(Image: "possibleWatchEvenInUfo", Text: (Mainline: "Watch\neverywhere", SubLine: "Stream on your phone, tablet,\nlaptop and TV.")),
+        IntroModel(Image: "putingSmallCoinIntoBox", Text: (Mainline: "There's a plan\nfor every fan", SubLine: "Small price. Big Entertainment\n")),
+        IntroModel(Image: "FrontOpeningDoorInPhone", Text: (Mainline: "Cancel online\nanytime", SubLine: "Join today, no reason to wait.\n")),
         IntroModel(Image: "", Text: (Mainline: "How do i watch", SubLine: "Members that subscribe to\nLitelix can watch here in the\napp."))
     ]
 }
