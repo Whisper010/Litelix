@@ -14,6 +14,25 @@ struct RecommendationPoster: View {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
+    var widthFactor : Double {
+        let aspectRatio = Double(screenHeight/screenWidth)
+        if aspectRatio >= 19.0/9 && aspectRatio <= 19.6/9{
+            return 0.85
+        }else if aspectRatio >= 15.0/9 && aspectRatio <= 17.0/9{
+            return 0.8
+        }
+        return 0.85
+    }
+    var heightFactor: Double {
+        let aspectRatio = Double(screenHeight/screenWidth)
+        if aspectRatio >= 19.0/9 && aspectRatio <= 19.6/9{
+            return 0.55
+        }else if aspectRatio >= 15.0/9 && aspectRatio <= 17.0/9{
+            return 0.55
+        }
+        return 0.7
+    }
+    
     var body: some View {
         if let media = media {
             
@@ -23,7 +42,7 @@ struct RecommendationPoster: View {
                                 AsyncImage(url: media.posterURL){ image in
                                     image
                                         .resizable()
-                                        .frame(width: screenWidth * 0.85 , height: screenHeight * 0.55)
+                                        .frame(width: screenWidth * widthFactor , height: screenHeight * heightFactor)
                                         .scaledToFit()
                                         .clipShape(RoundedRectangle(cornerRadius: 10.0))
                                     

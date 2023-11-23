@@ -19,7 +19,6 @@
 		2346CDD52B0DF4D600B59613 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDD42B0DF4D600B59613 /* UserViewModel.swift */; };
 		2346CDDD2B0E002600B59613 /* MyLitelix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDDC2B0E002600B59613 /* MyLitelix.swift */; };
 		2346CDE32B0E7D3F00B59613 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDE22B0E7D3F00B59613 /* Extensions.swift */; };
-		2346CDE72B0E8AEC00B59613 /* EveryoneWatchingMediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDE62B0E8AEC00B59613 /* EveryoneWatchingMediaCard.swift */; };
 		238B6A1E2B0CAA0700D1E7D5 /* NewHotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */; };
 		238FF0F92B0B615300259CDA /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0F82B0B615300259CDA /* ParentView.swift */; };
 		238FF0FB2B0B63BE00259CDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0FA2B0B63BE00259CDA /* HomeView.swift */; };
@@ -30,7 +29,7 @@
 		23BB7F092B0D2D6800E6AAFE /* GenreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F082B0D2D6800E6AAFE /* GenreResult.swift */; };
 		23BB7F0B2B0D332D00E6AAFE /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */; };
 		23BB7F0D2B0D41A100E6AAFE /* RecommendationPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */; };
-		23BB7F0F2B0D44B100E6AAFE /* UpcommingMediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0E2B0D44B100E6AAFE /* UpcommingMediaCard.swift */; };
+		23BB7F0F2B0D44B100E6AAFE /* NewHotMediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */; };
 		23C3750B2B039EFB0011C454 /* TrendingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750A2B039EFB0011C454 /* TrendingCard.swift */; };
 		23C3750D2B039F490011C454 /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750C2B039F490011C454 /* MediaResult.swift */; };
 		23C3750F2B039F650011C454 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750E2B039F650011C454 /* Media.swift */; };
@@ -72,7 +71,6 @@
 		2346CDD42B0DF4D600B59613 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		2346CDDC2B0E002600B59613 /* MyLitelix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLitelix.swift; sourceTree = "<group>"; };
 		2346CDE22B0E7D3F00B59613 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2346CDE62B0E8AEC00B59613 /* EveryoneWatchingMediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryoneWatchingMediaCard.swift; sourceTree = "<group>"; };
 		238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotView.swift; sourceTree = "<group>"; };
 		238FF0F82B0B615300259CDA /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		238FF0FA2B0B63BE00259CDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -83,7 +81,7 @@
 		23BB7F082B0D2D6800E6AAFE /* GenreResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResult.swift; sourceTree = "<group>"; };
 		23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
 		23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPoster.swift; sourceTree = "<group>"; };
-		23BB7F0E2B0D44B100E6AAFE /* UpcommingMediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcommingMediaCard.swift; sourceTree = "<group>"; };
+		23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotMediaCard.swift; sourceTree = "<group>"; };
 		23C3750A2B039EFB0011C454 /* TrendingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCard.swift; sourceTree = "<group>"; };
 		23C3750C2B039F490011C454 /* MediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResult.swift; sourceTree = "<group>"; };
 		23C3750E2B039F650011C454 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -181,8 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */,
-				23BB7F0E2B0D44B100E6AAFE /* UpcommingMediaCard.swift */,
-				2346CDE62B0E8AEC00B59613 /* EveryoneWatchingMediaCard.swift */,
+				23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */,
 			);
 			path = "New&Hot";
 			sourceTree = "<group>";
@@ -406,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23BB7F0F2B0D44B100E6AAFE /* UpcommingMediaCard.swift in Sources */,
+				23BB7F0F2B0D44B100E6AAFE /* NewHotMediaCard.swift in Sources */,
 				2346CDD52B0DF4D600B59613 /* UserViewModel.swift in Sources */,
 				23C3750D2B039F490011C454 /* MediaResult.swift in Sources */,
 				238FF0FB2B0B63BE00259CDA /* HomeView.swift in Sources */,
@@ -417,7 +414,6 @@
 				238FF1042B0B70AA00259CDA /* MovieListView.swift in Sources */,
 				238FF0F92B0B615300259CDA /* ParentView.swift in Sources */,
 				23BB7F072B0D295D00E6AAFE /* Genre.swift in Sources */,
-				2346CDE72B0E8AEC00B59613 /* EveryoneWatchingMediaCard.swift in Sources */,
 				2346CDDD2B0E002600B59613 /* MyLitelix.swift in Sources */,
 				238FF0FD2B0B647A00259CDA /* MediaCard.swift in Sources */,
 				231A9EE52B02BF90000963C8 /* MediaViewModel.swift in Sources */,

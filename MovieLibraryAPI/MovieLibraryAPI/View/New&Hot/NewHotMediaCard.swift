@@ -10,26 +10,76 @@ import SwiftUI
 
 
 
-struct UpcommingMediaCard: View {
+struct NewHotMediaCard: View {
     
     let media: Media
+    
+    let category: Categories
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
-    let widthFactor = 0.8
-    let heightFactor = 0.2
+    var heightFactor: Double = 0
+    var widthFactor : Double = 0
+    
+    @State var topIndex: Int
+    
+    init(media: Media, category: Categories, topIndex: Int = 0) {
+        self.media = media
+        self.category = category
+        
+        var widthFactor : Double {
+            
+            let aspectRatio = Double(screenHeight/screenWidth)
+            if aspectRatio >= 19.0/9 && aspectRatio <= 19.6/9{
+                
+                return category == .everyoneWatching ? 0.9 : 0.85
+            }else if aspectRatio >= 15.0/9 && aspectRatio <= 17.0/9{
+                return category == .everyoneWatching ? 0.9 : 0.8
+            }
+            return category == .everyoneWatching ? 0.95 : 0.92
+        }
+        var heightFactor: Double {
+            let aspectRatio = Double(screenHeight/screenWidth)
+            if aspectRatio >= 19.0/9 && aspectRatio <= 19.6/9{
+                return category == .everyoneWatching ? 0.23 : 0.2
+            }else if aspectRatio >= 15.0/9 && aspectRatio <= 17.0/9{
+                return category == .everyoneWatching ? 0.3 : 0.25
+            }
+            return category == .everyoneWatching ? 0.4 : 0.35
+        }
+        self.topIndex = topIndex
+        
+        self.heightFactor = heightFactor
+        self.widthFactor = widthFactor
+        
+        
+        
+    }
     
     var body: some View {
         HStack{
+            
+            
+            
             VStack{
-                Text(self.getMonthName(from: media.release_date, isTitle: true))
-                    .font(.title3)
-                    .fontWeight(.medium)
-                Text(self.extractDay(from: media.release_date))
-                    .multilineTextAlignment(.trailing)
-                    .font(.title)
-                    .fontWeight(.heavy)
+                if category == .comingSoon {
+                    Text(self.getMonthName(from: media.release_date, isTitle: true))
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        
+                    Text(self.extractDay(from: media.release_date))
+                        .multilineTextAlignment(.trailing)
+                        .font(.title)
+                        .fontWeight(.heavy)
+                    
+                }else if category != .everyoneWatching {
+                    Text(String(topIndex))
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        
+                }
+                
                
                 Spacer()
             }
@@ -37,10 +87,11 @@ struct UpcommingMediaCard: View {
             VStack{
                 ZStack{
                     
+                    
                     AsyncImage(url: media.backdropURL){ image in
                         image
                             .resizable()
-                            .frame(width: screenWidth * widthFactor,height: screenHeight * heightFactor)
+                            .frame(width:screenWidth * widthFactor ,height: screenHeight * heightFactor)
                             .scaledToFill()
                             .clipShape(RoundedRectangle(cornerRadius: 10.0))
                            
@@ -61,25 +112,35 @@ struct UpcommingMediaCard: View {
                                     .foregroundStyle(Color(hex: 0xD22F27))
                                     .font(.title)
                                     .fontWeight(.heavy)
+                                    
                                 Spacer()
                                 
-                        }.padding()
+                        }
                         Spacer()
-                    }
+                    }.padding()
                    
                     
                     
                 }
                 
                 HStack{
+                    HStack{
+                        Text("L")
+                            .foregroundStyle(Color(hex: 0xD22F27))
+                            .font(.title3)
+                            .fontWeight(.heavy)
+                        Text("MEDIA")
+                            .foregroundStyle(.secondary)
+                            .font(.footnote)
+                        
+                        Spacer()
+                        
+                    }
                     Text("")
                     Spacer()
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                         VStack{
                             Image(systemName: "bell")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: screenWidth * 0.06)
                                 .fontWeight(.bold)
                             
                             Text("Remind Me")
@@ -89,37 +150,23 @@ struct UpcommingMediaCard: View {
                     
                     NavigationLink(destination: MediaDetailView(media: media)){
                         
-                            VStack{
-                                Image(systemName: "info.circle")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: screenWidth * 0.06)
-                                    .fontWeight(.bold)
-                                
-                                Text("Info")
-                                    .font(.footnote)
-                            }.tint(.white)
-                       
+                        VStack{
+                            Image(systemName: "info.circle")
+                            Text("Info")
+                                .font(.footnote)
+                        }.tint(.white)
+                        
                     }
-                }.padding( [.top])
-                
-                HStack{
-                    Text("Coming " + getMonthName(from: media.release_date) + " " + extractDay(from: media.release_date))
-                    Spacer()
-                }
-                
-                
-                HStack{
-                        Text("L")
-                            .foregroundStyle(Color(hex: 0xD22F27))
-                            .font(.title3)
-                            .fontWeight(.heavy)
-                        Text("F I L M")
-                        .font(.footnote)
-                        
+                    
+                }.padding( [.top,.trailing])
+                if category == .comingSoon{
+                    HStack{
+                        Text("Coming " + getMonthName(from: media.release_date) + " " + extractDay(from: media.release_date))
                         Spacer()
-                        
+                    }
                 }
+                
+               
                 
                 HStack{
                     Text(media.titleName)
@@ -203,7 +250,7 @@ struct UpcommingMediaCard: View {
 
 struct UpcommingMediaCard_Previews: PreviewProvider {
     static var previews: some View {
-        UpcommingMediaCard(media: MediaViewModel.preview) 
+        NewHotMediaCard(media: MediaViewModel.preview, category: .comingSoon)
     }
 }
 

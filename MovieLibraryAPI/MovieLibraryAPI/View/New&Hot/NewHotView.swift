@@ -29,6 +29,7 @@ struct NewHotView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     @State private var selectedSegment = 0
+   
     
     let categories: [CategoryItem] = [
         CategoryItem(name: Categories.comingSoon.rawValue, iconName: "popcorn.fill", primaryColor: .yellow , secondaryColor: .clear),
@@ -79,7 +80,7 @@ struct NewHotView: View {
                         
                        
                         ForEach(viewModel.upcomingMovies){ media in
-                            UpcommingMediaCard(media: media)
+                            NewHotMediaCard(media: media,category: .comingSoon)
                         }
                         HStack{
                             Image(systemName: categories[1].iconName)
@@ -90,7 +91,7 @@ struct NewHotView: View {
                             Spacer()
                         }.padding()
                         ForEach(viewModel.onTheAirTVs){ media in
-                            UpcommingMediaCard(media: media)
+                            NewHotMediaCard(media: media, category: .everyoneWatching)
                         }
                         
                         HStack{
@@ -101,8 +102,16 @@ struct NewHotView: View {
                                 .font(.title2)
                             Spacer()
                         }.padding()
-                        ForEach(viewModel.ratedTVs){ media in
-                            EveryoneWatchingMediaCard(media: media)
+                        
+                        
+                       
+                        
+                        ForEach(viewModel.ratedTVs.indices, id: \.self) { index in
+                            HStack {
+                                if index < 10 {
+                                    NewHotMediaCard(media: viewModel.ratedTVs[index], category: .topTV, topIndex: index + 1)
+                                }
+                            }
                         }
                         
                         HStack{
@@ -113,8 +122,10 @@ struct NewHotView: View {
                                 .font(.title2)
                             Spacer()
                         }.padding()
-                        ForEach(viewModel.ratedMovies){ media in
-                            EveryoneWatchingMediaCard(media: media)
+                        ForEach(viewModel.ratedMovies.indices, id: \.self){ index in
+                            if index < 10{
+                                NewHotMediaCard(media: viewModel.ratedMovies[index], category: .topMovie, topIndex: index + 1)
+                            }
                         }
                         
                     }

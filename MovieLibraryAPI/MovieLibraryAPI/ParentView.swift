@@ -41,7 +41,7 @@ struct ParentView: View {
                         VStack{
                             Image(systemName: "square.fill")
                                 
-                            Text("My LiteLix")
+                            Text("My Litelix")
                         }
                         
                     }
