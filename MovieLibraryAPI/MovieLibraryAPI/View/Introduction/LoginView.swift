@@ -148,7 +148,8 @@ struct LoginView: View {
                 }
                
             }
-        }.accessibilityLabel("Navigated to Autherisation to account")
+            
+        }
       
     }
     

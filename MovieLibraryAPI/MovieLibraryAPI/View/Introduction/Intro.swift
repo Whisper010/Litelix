@@ -66,7 +66,7 @@ struct Intro: View {
             
             
             
-        }.accessibilityLabel("Navigated to Introduction to Lite lix")
+        }
         
         
         

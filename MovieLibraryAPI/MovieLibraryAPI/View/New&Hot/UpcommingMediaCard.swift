@@ -87,18 +87,20 @@ struct UpcommingMediaCard: View {
                         }.tint(.white)
                     }).padding(.trailing)
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        VStack{
-                            Image(systemName: "info.circle")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: screenWidth * 0.06)
-                                .fontWeight(.bold)
-                                                                                        
-                            Text("Info")
-                                .font(.footnote)
-                        }.tint(.white)
-                    })
+                    NavigationLink(destination: MediaDetailView(media: media)){
+                        
+                            VStack{
+                                Image(systemName: "info.circle")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: screenWidth * 0.06)
+                                    .fontWeight(.bold)
+                                
+                                Text("Info")
+                                    .font(.footnote)
+                            }.tint(.white)
+                       
+                    }
                 }.padding( [.top])
                 
                 HStack{

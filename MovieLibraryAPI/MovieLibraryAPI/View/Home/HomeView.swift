@@ -132,7 +132,7 @@ struct HomeView: View {
                 }
                 
             }
-            
+            .accessibilityLabel("Navigated to Home Screen")
             
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
