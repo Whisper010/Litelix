@@ -14,22 +14,26 @@ struct Intro: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     
+    
     var body: some View {
         
         
         NavigationStack{
-            TabView{
-                ForEach(viewModel.intros){ intro in
-                    IntroCard(intro: intro)
+            ZStack{
+                
+                TabView{
+                    ForEach(viewModel.intros.indices){ idx in
+                        IntroCard(intro: viewModel.intros[idx]/*, mediaBackground: idx == 3 ? true : false*/)
+
+                    }
                 }
+                .tabViewStyle(.page)
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
+                .onAppear{
+                    UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color(hex: 0xD22F27))
+                }
+                .accessibilityLabel("Swipe to continue")
             }
-            .tabViewStyle(.page)
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
-            .onAppear{
-                UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color(hex: 0xD22F27))
-            }
-            .accessibilityLabel("Swipe to continue")
-            
             ZStack{
                 
                 NavigationLink(destination: LoginView()){
@@ -78,29 +82,45 @@ struct IntroCard: View{
     
     let intro: IntroModel
     
+//    @State var mediaBackground: Bool
+    
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
     var body: some View{
-        VStack(spacing: 20){
-            
-            Image(intro.Image)
-                .resizable()
-                .frame(maxWidth: 300,maxHeight: 300)
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                .accessibilityLabel("\(intro.Image)")
-            
-            Text(intro.Text.Mainline)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .multilineTextAlignment(.center)
-                .accessibilityLabel(intro.Text.Mainline)
-            
-            Text(intro.Text.SubLine)
-                .font(.title3)
-                .fontWeight(.medium)
-                .multilineTextAlignment(.center)
-                .accessibilityLabel(intro.Text.SubLine)
-           
-            
+        
+        ZStack{
+//            if mediaBackground {
+//                Image("mediaCollection")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: screenWidth, height: screenHeight)
+//            }
+//            
+            VStack(spacing: 20){
+                
+                
+                
+                Image(intro.Image)
+                    .resizable()
+                    .frame(maxWidth: 300,maxHeight: 300)
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                    .accessibilityLabel("\(intro.Image)")
+                
+                Text(intro.Text.Mainline)
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.center)
+                    .accessibilityLabel(intro.Text.Mainline)
+                
+                Text(intro.Text.SubLine)
+                    .font(.title3)
+                    .fontWeight(.medium)
+                    .multilineTextAlignment(.center)
+                    .accessibilityLabel(intro.Text.SubLine)
+                
+            }
         }
     }
 }
@@ -117,7 +137,7 @@ struct IntroViewModel{
         IntroModel(Image: "possibleWatchEvenInUfo", Text: (Mainline: "Watch\neverywhere", SubLine: "Stream on your phone, tablet,\nlaptop and TV.")),
         IntroModel(Image: "putingSmallCoinIntoBox", Text: (Mainline: "There's a plan\nfor every fan", SubLine: "Small price. Big Entertainment\n")),
         IntroModel(Image: "FrontOpeningDoorInPhone", Text: (Mainline: "Cancel online\nanytime", SubLine: "Join today, no reason to wait.\n")),
-        IntroModel(Image: "", Text: (Mainline: "How do i watch", SubLine: "Members that subscribe to\nLitelix can watch here in the\napp."))
+        IntroModel(Image: "mediaCollection", Text: (Mainline: "How do i watch", SubLine: "Members that subscribe to\nLitelix can watch here in the\napp."))
     ]
 }
 

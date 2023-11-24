@@ -14,6 +14,9 @@ struct LoginView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var isLearnMoreClicked: Bool = false
+
+    
+    
     @State var attributedString: AttributedString = ""
     @State var attributedStringSecondary: AttributedString = ""
     
@@ -24,6 +27,7 @@ struct LoginView: View {
     
     @State var login: String = ""
     @State var password: String = ""
+    
     private var isButtonEnabled: Bool {
         
         return !login.isEmpty && !password.isEmpty ? true : false
