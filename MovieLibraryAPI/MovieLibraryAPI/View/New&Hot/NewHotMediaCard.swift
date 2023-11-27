@@ -42,7 +42,7 @@ struct NewHotMediaCard: View {
         var heightFactor: Double {
             let aspectRatio = Double(screenHeight/screenWidth)
             if aspectRatio >= 19.0/9 && aspectRatio <= 19.6/9{
-                return category == .everyoneWatching ? 0.23 : 0.2
+                return category == .everyoneWatching ? 0.23 : 0.22
             }else if aspectRatio >= 15.0/9 && aspectRatio <= 17.0/9{
                 return category == .everyoneWatching ? 0.3 : 0.25
             }

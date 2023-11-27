@@ -76,16 +76,20 @@ struct NewHotView: View {
                         VStack{
                             
                             ForEach(categories.indices, id: \.self){ index in
-                                Section(header: Text(categories[index].name)
-                                    .bold()
-                                    .font(.title2)
-                                    .padding()
-                                    .frame(width: screenWidth, alignment: .leading)
-                                    .background(GeometryReader{
-                                        Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .global).minY)
-                                    })
-                                )
-                            {
+                                Section(header: HStack{
+                                    Image(systemName: categories[index].iconName)
+                                        .foregroundStyle(categories[index].primaryColor, categories[index].secondaryColor)
+                                        
+                                    
+                                    Text(categories[index].name)
+                                        .bold()
+                                        .font(.title2)
+                                        .frame(width: screenWidth, alignment: .leading)
+                                        .background(GeometryReader{
+                                            Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .global).minY)
+                                        })
+                                }.offset(CGSize(width: 30, height: 0)))
+                                {
                                     if index == 0 {
                                         ForEach(viewModel.upcomingMovies) { media in
                                             NewHotMediaCard(media: media, category: .comingSoon)
@@ -108,9 +112,10 @@ struct NewHotView: View {
                                         }
                                     }
                                 }.id(index)
+                                    
                             }
                             
-                                              
+                            
                             
                         }
                         
@@ -133,7 +138,7 @@ struct NewHotView: View {
                         await viewModel.loadOnTheAirTVs()
                         await viewModel.loadRated(mediaType: .movie)
                         await viewModel.loadRated(mediaType: .tv)
-
+                        
                         contentLoaded = true
                     }
                 }
@@ -161,8 +166,6 @@ struct NewHotView: View {
             value += nextValue()
         }
     }
-    
-    
     
     
 }

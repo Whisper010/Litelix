@@ -1,16 +1,5 @@
 import SwiftUI
 
-
-struct ViewOffsetKey: PreferenceKey{
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        withAnimation{
-            value += nextValue()
-        }
-        
-    }
-}
-
 class GradientViewModel: ObservableObject{
     
     
@@ -44,11 +33,11 @@ struct HomeView: View {
     
     @StateObject var gradientViewModel = GradientViewModel()
     
-    @State var gradientFactor = 0.5
-    
     @State var searchText = ""
     
     @State var mainMedia: Media? = nil
+    
+    
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -69,8 +58,7 @@ struct HomeView: View {
                     if searchText.isEmpty{
                         VStack{
                             RecommendationPoster(media: viewModel.airingTVs.last)
-                                
-                                
+                                   
                             MovieListView(collection: $viewModel.trendingTVs, titleText: "Trending TV Shows")
                             MovieListView(collection: $viewModel.trendingMovies, titleText: "Trending Movies")
                             
@@ -162,6 +150,7 @@ struct HomeView: View {
         .onAppear{
             Task{
                 await viewModel.loadTrending(mediaType: .movie)
+                
                 await viewModel.loadTrending(mediaType: .tv)
                 
                 await viewModel.loadRated(mediaType: .movie)
@@ -174,11 +163,24 @@ struct HomeView: View {
                 
                 await viewModel.loadGenres(mediaType: .movie)
                 await viewModel.loadGenres(mediaType: .tv)
+                 
+                
             }
+            
             mainMedia = viewModel.airingTVs.first
             
         }
         
+    }
+    
+    struct ViewOffsetKey: PreferenceKey{
+        static var defaultValue: CGFloat = 0
+        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+            withAnimation{
+                value += nextValue()
+            }
+            
+        }
     }
 }
 
@@ -200,6 +202,12 @@ struct RoundedButtonStyle: ButtonStyle {
 }
 
 
-#Preview {
-    HomeView()
+struct HomeViewPeview: PreviewProvider{
+    
+    static var previews: some View{
+        
+        HomeView()
+
+    }
+    
 }
