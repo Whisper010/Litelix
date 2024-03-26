@@ -36,6 +36,7 @@
 		23C375132B04C6F30011C454 /* MediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375122B04C6F30011C454 /* MediaDetailView.swift */; };
 		23C375152B0635C80011C454 /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375142B0635C80011C454 /* MediaDetailViewModel.swift */; };
 		23C375532B076EAC0011C454 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375522B076EAC0011C454 /* LoginView.swift */; };
+		23F3FBF02BA9AB81006BBE71 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23F3FBEF2BA9AB81006BBE71 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		23C375122B04C6F30011C454 /* MediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailView.swift; sourceTree = "<group>"; };
 		23C375142B0635C80011C454 /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
 		23C375522B076EAC0011C454 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		23F3FBEF2BA9AB81006BBE71 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		231A9EAE2B029EEA000963C8 = {
 			isa = PBXGroup;
 			children = (
+				23F3FBEF2BA9AB81006BBE71 /* Shaders.metal */,
 				231A9EB92B029EEA000963C8 /* MovieLibraryAPI */,
 				231A9ECA2B029EEB000963C8 /* MovieLibraryAPITests */,
 				231A9ED42B029EEB000963C8 /* MovieLibraryAPIUITests */,
@@ -435,6 +438,7 @@
 				238B6A1E2B0CAA0700D1E7D5 /* NewHotView.swift in Sources */,
 				23BB7F0B2B0D332D00E6AAFE /* GenreViewModel.swift in Sources */,
 				2346CDD32B0DEEA700B59613 /* User.swift in Sources */,
+				23F3FBF02BA9AB81006BBE71 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +610,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,7 +640,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -134,11 +134,20 @@ struct NewHotView: View {
                 
                 .onAppear{
                     Task{
-                        await viewModel.loadUpcomingMovies()
-                        await viewModel.loadOnTheAirTVs()
-                        await viewModel.loadRated(mediaType: .movie)
-                        await viewModel.loadRated(mediaType: .tv)
-                        
+                        await withTaskGroup(of: Void.self) { group in
+                            group.addTask {
+                                await viewModel.loadUpcomingMovies()
+                            }
+                            group.addTask {
+                                await viewModel.loadOnTheAirTVs()
+                            }
+                            group.addTask {
+                                await viewModel.loadRated(mediaType: .movie)
+                            }
+                            group.addTask {
+                                await viewModel.loadRated(mediaType: .tv)
+                            }
+                        }
                         contentLoaded = true
                     }
                 }
