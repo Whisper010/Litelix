@@ -23,7 +23,7 @@ struct CategoryItem {
 
 
 struct NewHotView: View {
-    @StateObject var viewModel = MediaViewModel()
+    @State var viewModel = MediaViewModel()
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height

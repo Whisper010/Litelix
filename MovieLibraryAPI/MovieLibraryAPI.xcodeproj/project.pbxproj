@@ -19,6 +19,8 @@
 		2346CDD52B0DF4D600B59613 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDD42B0DF4D600B59613 /* UserViewModel.swift */; };
 		2346CDDD2B0E002600B59613 /* MyLitelix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDDC2B0E002600B59613 /* MyLitelix.swift */; };
 		2346CDE32B0E7D3F00B59613 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDE22B0E7D3F00B59613 /* Extensions.swift */; };
+		237276342BBDE18000F5FDC9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237276332BBDE18000F5FDC9 /* HttpClient.swift */; };
+		237276372BBDE35400F5FDC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237276362BBDE35400F5FDC9 /* Constants.swift */; };
 		238B6A1E2B0CAA0700D1E7D5 /* NewHotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */; };
 		238FF0F92B0B615300259CDA /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0F82B0B615300259CDA /* ParentView.swift */; };
 		238FF0FB2B0B63BE00259CDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0FA2B0B63BE00259CDA /* HomeView.swift */; };
@@ -72,6 +74,8 @@
 		2346CDD42B0DF4D600B59613 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		2346CDDC2B0E002600B59613 /* MyLitelix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLitelix.swift; sourceTree = "<group>"; };
 		2346CDE22B0E7D3F00B59613 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		237276332BBDE18000F5FDC9 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		237276362BBDE35400F5FDC9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotView.swift; sourceTree = "<group>"; };
 		238FF0F82B0B615300259CDA /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		238FF0FA2B0B63BE00259CDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				238FF1022B0B651200259CDA /* Examples */,
 				23C375112B039FAC0011C454 /* View */,
 				23C375102B039F8F0011C454 /* Model */,
+				237276352BBDE32D00F5FDC9 /* Utilities */,
 				231A9EBE2B029EEB000963C8 /* Assets.xcassets */,
 				2346CDE22B0E7D3F00B59613 /* Extensions.swift */,
 				231A9EC02B029EEB000963C8 /* Preview Content */,
@@ -223,6 +228,15 @@
 				2346CDDC2B0E002600B59613 /* MyLitelix.swift */,
 			);
 			path = MyLitelix;
+			sourceTree = "<group>";
+		};
+		237276352BBDE32D00F5FDC9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				237276332BBDE18000F5FDC9 /* HttpClient.swift */,
+				237276362BBDE35400F5FDC9 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		238FF0FE2B0B64A800259CDA /* Home */ = {
@@ -434,11 +448,13 @@
 				23C375532B076EAC0011C454 /* LoginView.swift in Sources */,
 				23C3750F2B039F650011C454 /* Media.swift in Sources */,
 				2346CDE32B0E7D3F00B59613 /* Extensions.swift in Sources */,
+				237276342BBDE18000F5FDC9 /* HttpClient.swift in Sources */,
 				23C375132B04C6F30011C454 /* MediaDetailView.swift in Sources */,
 				238B6A1E2B0CAA0700D1E7D5 /* NewHotView.swift in Sources */,
 				23BB7F0B2B0D332D00E6AAFE /* GenreViewModel.swift in Sources */,
 				2346CDD32B0DEEA700B59613 /* User.swift in Sources */,
 				23F3FBF02BA9AB81006BBE71 /* Shaders.metal in Sources */,
+				237276372BBDE35400F5FDC9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

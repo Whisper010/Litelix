@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-@MainActor
-class MediaDetailsViewModel: ObservableObject {
+@Observable
+class MediaDetailsViewModel {
     
-    @Published var credits: MovieCredits?
-    @Published var cast: [MovieCredits.Cast] = []
-    @Published var profiles: [CastProfile] = []
+    var credits: MovieCredits?
+    var cast: [MovieCredits.Cast] = []
+    var profiles: [CastProfile] = []
     
     let headers = [
         "accept": "application/json",

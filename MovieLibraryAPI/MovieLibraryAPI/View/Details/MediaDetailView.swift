@@ -14,7 +14,7 @@ struct MediaDetailView: View {
     @Environment(\.dismiss) var dismiss
     
     
-    @StateObject var viewModel = MediaDetailsViewModel()
+    @State var viewModel = MediaDetailsViewModel()
     
     let media: Media
     let headerHeight: CGFloat = 0.45

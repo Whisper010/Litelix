@@ -16,7 +16,6 @@ struct LoginView: View {
     @State var isLearnMoreClicked: Bool = false
 
     
-    
     @State var attributedString: AttributedString = ""
     @State var attributedStringSecondary: AttributedString = ""
     
@@ -36,7 +35,13 @@ struct LoginView: View {
     @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
     @AppStorage("userId") var userId: Int = 0
     
-    @Query var users: [User]
+    @State var credentialsError: CredentialsError?
+    
+    @State var fetchingData: Bool = false
+    
+    @State var viewModel = UserViewModel()
+    
+//    @Query var users: [User]
     
     var body: some View {
         NavigationStack{
@@ -45,20 +50,103 @@ struct LoginView: View {
                
                 Color(hex: 0x161616)
                 VStack(spacing: screenHeight * 0.02){
-                    TextField("Email or phone number", text: $login)
-                        .textFieldStyle(CredentialsFieldStyle())
-                        .frame(width: screenWidth*widthFactor)
+                    VStack{
+                        TextField("Username", text: $login)
+                            .textFieldStyle(CredentialsFieldStyle())
+                            .frame(width: screenWidth*widthFactor)
+                            
+                        if credentialsError == .userNotFound {
+                            HStack{
+                                Text("User doesn't exist")
+                                    .foregroundStyle(.yellow)
+                                    .font(.footnote)
+                                    Spacer()
+                              
+                            }.frame(width: screenWidth*widthFactor)
+                        }
                         
+                        if credentialsError == .userAlreadyExist {
+                            HStack{
+                                
+                                Text("User already exist")
+                                    .foregroundStyle(.yellow)
+                                    .font(.footnote)
+                                Spacer()
+                            }.frame(width: screenWidth*widthFactor)
+                        }
+                        Spacer().frame(height: screenHeight * 0.02)
+                        
+                        SecureField("Password", text: $password)
+                            .textFieldStyle(CredentialsFieldStyle())
+                            .frame(width: screenWidth*widthFactor)
+                        if credentialsError == .invalidPassword {
+                            HStack{
+                                Text("Invalid password")
+                                    .foregroundStyle(.yellow)
+                                    .font(.footnote)
+                                Spacer()
+                            }
+                            .frame(width: screenWidth*widthFactor)
+                            
+                        }
+                       
+                    }
                     
-                    TextField("Password", text: $password)
-                        .textFieldStyle(CredentialsFieldStyle())
-                        .frame(width: screenWidth*widthFactor)
                         
                     
                     Button(action: {
-                       SignIn(userName: login, password: password)
+                        
+                        Task{
+                            do {
+                                fetchingData = true
+                                try await viewModel.login(username: login, password: password)
+                                if viewModel.user != nil {
+                                    isLoggedIn = true
+                                }
+                                fetchingData = false
+                                
+                            }
+                            catch let error as CredentialsError{
+                                credentialsError = error
+                                fetchingData = false
+                            }
+                        }
+                        
+                        if login == "Admin" && password == "Admin" {
+                            isLoggedIn = true
+                        }
                     }, label: {
-                        Text("Sign in")
+                        Text("Log in")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.white)
+                            .frame(maxWidth: screenWidth * widthFactor, maxHeight: screenHeight * 0.044)
+                            .background(Color(hex: 0xD22F27))
+                            .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                    }).disabled(!isButtonEnabled)
+                        .opacity(!isButtonEnabled ? 0.5 : 1)
+                    
+                    
+                    Button(action: {
+                        Task{
+                            do {
+                                fetchingData = true
+                                try await viewModel.register(username: login, password: password)
+                                if viewModel.user != nil {
+                                    isLoggedIn = true
+                                }
+                                fetchingData = false
+                                
+                            }
+                            catch let error as CredentialsError{
+                                credentialsError = error
+                                fetchingData = false
+                            }
+                            
+                        }
+                       
+                    }, label: {
+                        Text("Sign up")
                             .font(.subheadline)
                             .fontWeight(.bold)
                             .foregroundStyle(Color.white)
@@ -113,6 +201,12 @@ struct LoginView: View {
                     
                 }
                 
+                if fetchingData {
+                    ZStack{
+                        Color(hex: 0x161616).opacity(0.5)
+                        ProgressView()
+                    }
+                }
               
             }
             .toolbar{
@@ -146,33 +240,34 @@ struct LoginView: View {
             }
             .onAppear{
                 Task{
-                    addUsers()
+//                    addUsers()
                     setupAttributedString()
                     
                 }
                
             }
+
             
         }
       
     }
-    
-    func SignIn(userName: String, password: String ){
-        for user in users {
-               if user.userName == userName && user.password == password {
-                   isLoggedIn = true
-                   userId = user.id
-                   break
-               }
-           }
-    }
-    
-    func addUsers(){
-        let users = UserViewModel().users
-        for user in users{
-            modelContext.insert(user)
-        }
-    }
+//    
+//    func SignIn(userName: String, password: String ){
+//        for user in users {
+//               if user.userName == userName && user.password == password {
+//                   isLoggedIn = true
+//                   userId = user.id
+//                   break
+//               }
+//           }
+//    }
+//    
+//    func addUsers(){
+//        let users = UserViewModel().users
+//        for user in users{
+//            modelContext.insert(user)
+//        }
+//    }
     
     func setupAttributedString(){
         attributedString = AttributedString("Sign in protected by Google reCAPTCHA to\nensure you're not a bot. Learn More")

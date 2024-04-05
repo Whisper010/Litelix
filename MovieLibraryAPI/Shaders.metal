@@ -18,4 +18,5 @@ using namespace metal;
     half3 customColor = half3(sin(angle), sin(angle+2), sin(angle+4));
     
     return half4(customColor * intensity, color.a);
+
 }

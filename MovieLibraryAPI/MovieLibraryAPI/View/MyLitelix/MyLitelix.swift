@@ -13,26 +13,26 @@ struct MyLitelix: View {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
-    @Query var users: [User]
+//    @Query var users: [User]
     
     @AppStorage("userId") var userId: Int = 0
     
     @State private var showingMenu = false
     
-    var currentUser: User? {
-       return users.first{ $0.id == userId}
-    }
+//    var currentUser: User? {
+//       return users.first{ $0.id == userId}
+//    }
     
     var body: some View {
         NavigationStack{
             ScrollView{
                 VStack{
-                    Image(currentUser?.icon ?? "")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: screenWidth * 0.2)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                    Text(currentUser?.userName ?? "")
+//                    Image(/*currentUser?.icon ?? ""*/<#String#>)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: screenWidth * 0.2)
+//                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+//                    Text(/*currentUser?.userName ?? ""*/verbatim: <#String#>)
                     
                     Button(action: {}, label: {
                         HStack{

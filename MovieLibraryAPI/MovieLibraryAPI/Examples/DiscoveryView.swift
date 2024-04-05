@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DiscoveryView: View {
     
-    @StateObject var viewModel = MediaViewModel()
+    @State var viewModel = MediaViewModel()
     
     @State var searchText = ""
     

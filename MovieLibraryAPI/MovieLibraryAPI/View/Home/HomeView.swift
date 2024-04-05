@@ -29,7 +29,7 @@ class GradientViewModel: ObservableObject{
 
 struct HomeView: View {
     
-    @StateObject var viewModel = MediaViewModel()
+    @State var viewModel = MediaViewModel()
     
     @StateObject var gradientViewModel = GradientViewModel()
     
@@ -66,7 +66,7 @@ struct HomeView: View {
                                             .frame(width: screenWidth , height: maxHeight).offset(y: -topHeightArea )
                                     }
                                 }
-                                    RecommendationPoster(media: viewModel.airingTVs.last)
+                                RecommendationPoster(media: viewModel.airingTVs.first)
                                 
                             }
                                    

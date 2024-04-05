@@ -8,27 +8,27 @@
 import Foundation
 import SwiftUI
 
-@MainActor
-class MediaViewModel: ObservableObject {
+@Observable
+class MediaViewModel{
     
-    @Published var trendingMovies: [Media] = []
-    @Published var trendingTVs: [Media] = []
+    var trendingMovies: [Media] = []
+    var trendingTVs: [Media] = []
     
-    @Published var ratedMovies: [Media] = []
-    @Published var ratedTVs: [Media] = []
+    var ratedMovies: [Media] = []
+    var ratedTVs: [Media] = []
     
-    @Published var upcomingMovies: [Media] = []
-    @Published var onTheAirTVs: [Media] = []
+    var upcomingMovies: [Media] = []
+    var onTheAirTVs: [Media] = []
     
-    @Published var popularMovies: [Media] = []
-    @Published var popularTVs: [Media] = []
+    var popularMovies: [Media] = []
+    var popularTVs: [Media] = []
     
-    @Published var airingTVs: [Media] = []
+    var airingTVs: [Media] = []
     
-    @Published var searchResults: [Media] = []
+    var searchResults: [Media] = []
     
-    @Published var genresMovie: [Genre] = []
-    @Published var genresTV: [Genre] = []
+    var genresMovie: [Genre] = []
+    var genresTV: [Genre] = []
     
     let dateFormatter = DateFormatter()
     let currentDate = Date()

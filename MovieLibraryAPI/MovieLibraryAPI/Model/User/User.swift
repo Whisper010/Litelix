@@ -6,21 +6,11 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class User{
-    @Attribute(.unique) var id: Int
-    @Attribute(.unique) var userName: String
-    var password: String
-    var icon: String
+struct User: Identifiable, Codable{
     
-    init(id: Int, userName: String, password: String, icon: String) {
-        self.id = id
-        self.userName = userName
-        self.password = password
-        self.icon = icon
-    }
-    
+    let id: UUID
+    let username: String
+    let password: String
     
 }

@@ -17,7 +17,7 @@ struct MovieLibraryAPIApp: App {
         WindowGroup {
             
             ParentView().preferredColorScheme(.dark)
-        }.modelContainer(for: User.self)
+        }/*.modelContainer(for: User.self)*/
         
     }
 }
