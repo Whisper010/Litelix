@@ -1,37 +1,29 @@
 import SwiftUI
 
-class GradientViewModel: ObservableObject{
+
+class PageObserver: ObservableObject{
+    @Published var currentPage: Int = 0
+    @Published var numberOfPages: Int = 0
+    @Published var direction: PageDirection = .none
+    @Published var offset: Double = 0.0
+    @Published var hitAllowed: Bool = false
+    @Published var dragX: Float = 0.0
+    @Published var currentMedia: Media? = nil
+    @Published var screenWidth: Float = 0.0
+    @Published var widthFactor: Float = 0.0
+    @Published var opacity: Double = 1.0
     
-    
-    @Published var gradientFactor: Double = 0.5
-    private let scrollTreshold: Double = UIScreen.main.bounds.height * 0.2
-    
-    // Function to adjust gradient factor smoothly based on scroll offset
-    func adjustGradientFactor(for offset: CGFloat){
-        
-        if abs(offset) > scrollTreshold{
-            
-            let adjustedOffset = abs(offset) - scrollTreshold
-            
-            let directionFactor = offset > 0 ? -1 : 1
-            
-            let newFactor = max(0.0, min(1.0, 0.35 - Double(directionFactor) * adjustedOffset / 1000))
-            withAnimation(.easeInOut){
-                gradientFactor = newFactor
-            }
-            
-            
-        }
-        
-        
+    enum PageDirection {
+        case none, right, left
     }
 }
+
 
 struct HomeView: View {
     
     @State var viewModel = MediaViewModel()
     
-    @StateObject var gradientViewModel = GradientViewModel()
+    //    @StateObject var gradientViewModel = GradientViewModel()
     
     @State var searchText = ""
     
@@ -43,41 +35,93 @@ struct HomeView: View {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
+    @StateObject var observer = PageObserver()
+    
     var body: some View {
-        NavigationStack{
-            
-            ZStack{
+        
+            NavigationStack{
+                
+                
                 ScrollView(showsIndicators: false){
-                   
+                    
                     
                     if searchText.isEmpty{
-                        VStack{
-                            
-                            ZStack {
-                                GeometryReader { geo in
+                        
+                        ZStack{
+                            ZStack{
+                                VStack(spacing: 0) {
+                                    let maxHeight = screenHeight * 1.9
+                                    let topHeightArea = screenHeight * 0.6
                                     TimelineView(.animation) { tl in
                                         let time = start.distance(to: tl.date)
-                                        let maxHeight = geo.size.height * 3
-                                        let topHeightArea = geo.size.height * 0.7
+                                        
                                         Color.blue
                                             .colorEffect(
                                                 ShaderLibrary.rainbow(.float(time * 0.2), .float(maxHeight))
                                             )
-                                            .frame(width: screenWidth , height: maxHeight).offset(y: -topHeightArea )
+                                            
+                                    }
+                                    .frame(width: screenWidth , height: maxHeight).offset(y: -topHeightArea )
+                                    
+                                    Color.black
+                                }
+                            }
+                            //                                ForEach(viewModel.airingTVs.indices.reversed(), id: \.self ) {index in
+                            //                                    RecommendationPoster(media: viewModel.airingTVs[index], allowGesture: observer.currentPage == index ? true : false)
+                            //                                        .environmentObject(observer)
+                            //                                        .colorEffect(ShaderLibrary.pageFadeOut(.float(observer.dragX),.float(observer.screenWidth * observer.widthFactor)))
+                            //                                }
+                            
+                            VStack{
+                                ZStack{
+                                    if viewModel.airingTVs.indices.contains(observer.currentPage){
+                                        
+                                        let safePage = observer.currentPage
+
+                                        if observer.direction == .right{
+                                            let nextPage = safePage - 1
+                                            if viewModel.airingTVs.indices.contains(nextPage){
+                                                RecommendationPoster(media: viewModel.airingTVs[nextPage], allowGesture: false)
+                                                    .environmentObject(observer)
+                                                    .disabled(true)
+   
+                                            }
+                                        }
+                                        if observer.direction == .left{
+                                            let nextPage = safePage + 1
+                                            if viewModel.airingTVs.indices.contains(nextPage){
+                                                RecommendationPoster(media: viewModel.airingTVs[nextPage],allowGesture: false)
+                                                    .environmentObject(observer)
+                                                    .disabled(true)
+                                                
+                                            }
+                                        }
+                                        
+                                        
+                                        
+                                        RecommendationPoster(media: viewModel.airingTVs[observer.currentPage], allowGesture: true)
+                                            .environmentObject(observer)
+                                            .colorEffect(ShaderLibrary.pageFadeOut(.float(observer.dragX),.float(observer.screenWidth * observer.widthFactor)))
+                                        
+                                            .onAppear{
+                                                
+                                            }
                                     }
                                 }
-                                RecommendationPoster(media: viewModel.airingTVs.first)
+                                
+                                PageControl(numberOfPages: viewModel.airingTVs.count, currentPage: $observer.currentPage)
+                                
+                                MovieListView(collection: $viewModel.trendingTVs, titleText: "Trending TV Shows")
+                                MovieListView(collection: $viewModel.trendingMovies, titleText: "Trending Movies")
+                                
+                                MovieListView(collection: $viewModel.ratedTVs, titleText: "Top TV Shows")
+                                MovieListView(collection: $viewModel.ratedMovies, titleText: "Top Movies")
+                                
+                                MovieListView(collection: $viewModel.popularTVs, titleText: "Popular TV Shows")
+                                MovieListView(collection: $viewModel.popularMovies, titleText: "Popular Movies")
                                 
                             }
-                                   
-                            MovieListView(collection: $viewModel.trendingTVs, titleText: "Trending TV Shows")
-                            MovieListView(collection: $viewModel.trendingMovies, titleText: "Trending Movies")
                             
-                            MovieListView(collection: $viewModel.ratedTVs, titleText: "Top TV Shows")
-                            MovieListView(collection: $viewModel.ratedMovies, titleText: "Top Movies")
-                            
-                            MovieListView(collection: $viewModel.popularTVs, titleText: "Popular TV Shows")
-                            MovieListView(collection: $viewModel.popularMovies, titleText: "Popular Movies")
                             
                         }
                         
@@ -124,28 +168,19 @@ struct HomeView: View {
                     }
                     
                 }
-                .coordinateSpace(name: "ScrollView")
-                .onPreferenceChange(ViewOffsetKey.self){ value in
-                    gradientViewModel.adjustGradientFactor(for: value)
-                }
+                .accessibilityLabel("Navigated to Home Screen")
                 
-            }
-            .accessibilityLabel("Navigated to Home Screen")
-            
-            .toolbar{
-                ToolbarItem(placement: .topBarLeading){
-                    Text("For You")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        .padding()
-                    
+                .toolbar{
+                    ToolbarItem(placement: .topBarLeading){
+                        Text("For You")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .padding()
+                        
+                    }
                 }
             }
-            
-            .background(
-                Color.black
-            )
-        }
+        
         .onChange(of: searchText){ newValue in
             if newValue.count > 0{
                 Task{
@@ -154,10 +189,7 @@ struct HomeView: View {
                 
             }
         }
-        
-        
         .searchable(text: $searchText)
-        
         .onAppear{
             Task{
                 await withTaskGroup(of: Void.self) { group in
@@ -170,30 +202,22 @@ struct HomeView: View {
                     group.addTask { await viewModel.loadPopular(mediaType: .movie) }
                     group.addTask { await viewModel.loadPopular(mediaType: .tv) }
                     
-                    group.addTask { await viewModel.loadAiringTVs() }
+                    group.addTask {
+                        await viewModel.loadAiringTVs()
+                        
+                    }
                     
                     group.addTask { await viewModel.loadGenres(mediaType: .movie) }
                     group.addTask { await viewModel.loadGenres(mediaType: .tv) }
                 }
-                 
+                observer.numberOfPages =  viewModel.airingTVs.count
                 mainMedia = viewModel.airingTVs.first
             }
-            
-           
-            
+     
         }
         
     }
     
-    struct ViewOffsetKey: PreferenceKey{
-        static var defaultValue: CGFloat = 0
-        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-            withAnimation{
-                value += nextValue()
-            }
-            
-        }
-    }
 }
 
 struct RoundedButtonStyle: ButtonStyle {
@@ -205,11 +229,11 @@ struct RoundedButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            
+        
             .background(RoundedRectangle(cornerRadius: 10.0).fill( backgroundColor).opacity(rectOpacity))
             .shadow(radius: 5) // Optional: add shadow for a lifted effect
             .frame(width: screenSize.width * 0.35 ,height: screenSize.height * 0.05)
-            
+        
     }
 }
 
@@ -219,7 +243,7 @@ struct HomeViewPeview: PreviewProvider{
     static var previews: some View{
         
         HomeView()
-
+        
     }
     
 }

@@ -31,7 +31,7 @@ struct MediaCard: View {
     
     
     var body: some View{
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .top){
             AsyncImage(url: item.posterURL){ image in
                 image
                     .resizable()
@@ -51,20 +51,22 @@ struct MediaCard: View {
                 }
     
             }
-            VStack{
-                HStack{
+            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            VStack(alignment: .leading){
+                HStack(){
                     Text("L")
                         .foregroundStyle(Color(hex: 0xD22F27))
                         .font(.title2)
                         .fontWeight(.heavy)
                     Spacer()
-                       
-                }.padding(screenWidth * 0.01)
-                Spacer()
+ 
+                }.padding(.horizontal, 5.0)
+               
             }
             
+        }
+        .clipped()
             
-        }.cornerRadius(10.0)
         
         
         

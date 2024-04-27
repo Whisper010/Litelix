@@ -26,16 +26,13 @@ struct MovieListView: View {
         .padding(.horizontal)
         
         ScrollView(.horizontal,showsIndicators: false) {
-            HStack{
+            HStack(spacing: 12){
                 ForEach(collection){ item in
                     NavigationLink(destination: MediaDetailView(media: item)){
                         MediaCard(item: item)
                     }
-                        
-                        
-                   
                 }
-            }.padding(.horizontal)
+            }
         }
     }
   

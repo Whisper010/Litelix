@@ -11,8 +11,14 @@ struct RecommendationPoster: View {
     
     let media: Media?
     
+    var allowGesture: Bool
+    
+    @EnvironmentObject var observer: PageObserver
+    
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    
+    @State private var opacity = 1.0
     
     var widthFactor : Double {
         let aspectRatio = Double(screenHeight/screenWidth)
@@ -33,96 +39,193 @@ struct RecommendationPoster: View {
         return 0.7
     }
     
+    
+    
     var body: some View {
         if let media = media {
             
             
+            
+            ZStack {
+                NavigationLink(destination: MediaDetailView(media: media)){
+                    AsyncImage(url: media.posterURL){ image in
+                        image
+                            .resizable()
+                            .frame(width: screenWidth * widthFactor , height: screenHeight * heightFactor)
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        
+                        
+                    }placeholder: {
                         ZStack{
-                            NavigationLink(destination: MediaDetailView(media: media)){
-                                AsyncImage(url: media.posterURL){ image in
-                                    image
-                                        .resizable()
-                                        .frame(width: screenWidth * widthFactor , height: screenHeight * heightFactor)
-                                        .scaledToFit()
-                                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                                    
-                                    
-                                }placeholder: {
-                                    ZStack{
-                                        RoundedRectangle(cornerRadius: 10.0).fill(Color.black)
-                                            .frame(width: screenWidth * 0.85,
-                                                   height: screenHeight * 0.55)
-                                        ProgressView()
-                                            .frame(width: screenWidth * 0.85,
-                                                   height: screenHeight * 0.55)
-                                    }
-                                }
-                            }.accessibilityLabel(media.titleName )
-                            VStack(spacing: 8){
-                                Spacer()
-                                HStack{
-                                    Text(media.titleName)
-                                        .font(.title)
-                                        .fontWeight(.heavy)
-                                        .multilineTextAlignment(.center)
-                                        .shadow(radius: 5)
-                                    
-                                    
-                                } .padding([.leading,.trailing])
-                                HStack {
-                                    ForEach(media.genreNames, id : \.self){ genreName in
-                                        Text(genreName)
-                                    }
-                                    
-                                }.fontWeight(.medium)
-                                HStack(){
-                                    
-                                    Button(action: {}, label: {
-                                        HStack{
-                                            Text("Play")
-                                                .font(.title3)
-                                                .fontWeight(.bold)
-                                                .foregroundStyle(Color.black)
-                                            
-                                            Image(systemName: "play.fill")
-                                                .foregroundStyle(Color.black)
-                                        }
-                                    })
-                                    .frame(width: screenWidth * 0.32, height: screenHeight * 0.05)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
-                                    .shadow(radius: 5)
-                                    
-                                    
-                                    Button(action: {print("Play Button Tapped")}, label: {
-                                        HStack{
-                                            Text("My List")
-                                                .font(.title3)
-                                                .fontWeight(.bold)
-                                            
-                                            Image(systemName: "plus")
-                                                .fontWeight(.bold)
-                                            
-                                        }
-                                        
-                                    })
-                                    .frame(width: screenWidth * 0.35, height: screenHeight * 0.05)
-                                    .background(Color.brighten(hex:0x000000, percentage: 0.2).opacity(0.9))
-                                    .cornerRadius(5)
-                                    .shadow(radius: 5)
-                                    
-                                }.padding(.bottom)
-                                
-                            }.tint(.white)
-                            
+                            RoundedRectangle(cornerRadius: 10.0).fill(Color.black)
+                                .frame(width: screenWidth * widthFactor,
+                                       height: screenHeight * heightFactor)
+                            ProgressView()
+                                .frame(width: screenWidth * widthFactor,
+                                       height: screenHeight * heightFactor)
                         }
+                    }
                     
-                   
+                    .gesture( allowGesture ?
+                              dragPageGesture(observer: observer)
+                              : nil
+                              
+                    )
+                }
+                .accessibilityLabel(media.titleName )
+                
+                VStack(spacing: 8){
+                    Spacer()
+                    HStack{
+                        Text(media.titleName)
+                            .font(.title)
+                            .fontWeight(.heavy)
+                            .multilineTextAlignment(.center)
+                            .shadow(radius: 5)
+                        
+                    }
+                    .padding([.leading,.trailing])
+                    .gesture(allowGesture ?
+                             dragPageGesture(observer: observer)
+                             : nil)
+                    HStack {
+                        ForEach(media.genreNames, id : \.self){ genreName in
+                            Text(genreName)
+                        }
+                        
+                        
+                    }
+                    .fontWeight(.medium)
+                    .gesture(
+                        allowGesture ?
+                        dragPageGesture(observer: observer)
+                        : nil
+                    )
+                    
+                    HStack{
+                        
+                        Button(action: {}, label: {
+                            HStack{
+                                Text("Play")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color.black)
+                                
+                                Image(systemName: "play.fill")
+                                    .foregroundStyle(Color.black)
+                            }
+                        })
+                        .frame(width: screenWidth * 0.32, height: screenHeight * 0.05)
+                        .background(Color.white)
+                        .cornerRadius(5)
+                        .shadow(radius: 5)
+                        
+                        
+                        Button(action: {print("Play Button Tapped")}, label: {
+                            HStack{
+                                Text("My List")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                Image(systemName: "plus")
+                                    .fontWeight(.bold)
+                                
+                            }
+                            
+                        })
+                        .frame(width: screenWidth * 0.35, height: screenHeight * 0.05)
+                        .background(Color.brighten(hex:0x000000, percentage: 0.2).opacity(0.9))
+                        .cornerRadius(5)
+                        .shadow(radius: 5)
+                        
+                    }.padding(.bottom)
+                    
+                    
+                }.tint(.white)
+                
+            }
+            .clipped()
+            .onAppear{
+                observer.screenWidth = Float(screenWidth)
+                observer.widthFactor = Float(widthFactor)
+            }
+            .opacity(self.opacity)
         }
+        
+        
+    }
+    
+}
+
+extension View {
+    func dragPageGesture(observer: PageObserver) -> some Gesture {
+        DragGesture()
+            .onChanged{ value in
+                let treshhold: Double = 300
+                
+                if value.translation.width < 0 && observer.currentPage != observer.numberOfPages - 1 {
+                    observer.direction = .left
+                    observer.dragX = Float(value.translation.width)
+                } else if value.translation.width > 0 && observer.currentPage != 0{
+                    observer.direction = .right
+                    observer.dragX = Float(value.translation.width)
+                }
+                
+                
+            }
+            .onEnded{ value in
+                let treshhold: Float = 200
+                let distance = abs(observer.dragX)
+                //
+                
+                if observer.direction == .left && observer.currentPage != observer.numberOfPages - 1 && distance > treshhold  {
+                    withAnimation(.easeInOut(duration: 0.25)){
+                        observer.dragX = -Float(observer.screenWidth * observer.widthFactor)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        
+                        observer.dragX = 0.0
+                        observer.currentPage += 1
+                    }
+                    
+                    
+                } else
+                if observer.direction == .left && observer.currentPage != observer.numberOfPages-1 && distance <= treshhold{
+                    withAnimation(.easeInOut){
+                        observer.dragX = 0.0
+                    }
+                }
+                
+                if observer.direction == .right && observer.currentPage != 0 && distance > treshhold {
+                    
+                    withAnimation(.easeInOut(duration: 0.25)){
+                        observer.dragX = Float(observer.screenWidth * observer.widthFactor)
+                        
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        observer.dragX = 0.0
+                        observer.currentPage -= 1
+                        
+                    }
+                    
+                    
+                    
+                }else if observer.direction == .right && observer.currentPage != 0 && distance <= treshhold{
+                    withAnimation(.easeInOut) {
+                        observer.dragX = 0.001
+                    }
+                }
+                
+                
+            }
+        
+        
+        
         
     }
 }
 
 #Preview {
-    RecommendationPoster(media: MediaViewModel.preview)
+    RecommendationPoster(media: MediaViewModel.preview, allowGesture: true)
 }
