@@ -4,19 +4,26 @@ import SwiftUI
 class PageObserver: ObservableObject{
     @Published var currentPage: Int = 0
     @Published var numberOfPages: Int = 0
+    
     @Published var direction: PageDirection = .none
-    @Published var offset: Double = 0.0
+    
+    @Published var offset: CGFloat = 0.0
     @Published var hitAllowed: Bool = false
-    @Published var dragX: Float = 0.0
+   
     @Published var currentMedia: Media? = nil
-    @Published var screenWidth: Float = 0.0
-    @Published var widthFactor: Float = 0.0
-    @Published var opacity: Double = 1.0
+    
+    
+    @Published var dragX: Float = 0.0
+    
+    
+    @Published var size: CGSize = .zero
     
     enum PageDirection {
         case none, right, left
     }
 }
+
+
 
 
 struct HomeView: View {
@@ -32,8 +39,10 @@ struct HomeView: View {
     @State var start = Date.now
     
     
+    
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    
     
     @StateObject var observer = PageObserver()
     
@@ -73,41 +82,101 @@ struct HomeView: View {
                             //                                }
                             
                             VStack{
-                                ZStack{
-                                    if viewModel.airingTVs.indices.contains(observer.currentPage){
+                                
+                                
+//                                    ZStack {
+//                                        ForEach(viewModel.airingTVs.indices.reversed(), id: \.self){ index in
+//                                            if index != observer.currentPage {
+//                                                RecommendationPoster(media: viewModel.airingTVs[index], allowGesture: false)
+//                                                    .environmentObject(observer)
+//                                                    .clipped()
+//                                                    .hidden()
+//                                            } else {
+//                                                RecommendationPoster(media: viewModel.airingTVs[index], allowGesture: true)
+//                                                    .environmentObject(observer)
+//                                                    .clipped()
+//                                                    
+//                                            }
+//                                                
+//                                        }
+//                                            
+//                                    
+//                                }
+                                
+//                                ZStack{
+//                                    if viewModel.airingTVs.indices.contains(observer.currentPage){
+//                                        
+//                                        let safePage = observer.currentPage
+//
+//                                        if observer.direction == .right{
+//                                            let nextPage = safePage - 1
+//                                            if viewModel.airingTVs.indices.contains(nextPage){
+//                                                
+//                                                TimelineView(.animation) { tl in
+//                                                    let time = start.distance(to: tl.date)
+//                                                    
+//                                                    RecommendationPoster(media: viewModel.airingTVs[nextPage], allowGesture: false)
+//                                                        .environmentObject(observer)
+//                                                        .disabled(true)
+//                                                        .padding(.vertical, 20)
+//                                                        
+//                                                        .drawingGroup()
+//                                                        .distortionEffect(ShaderLibrary.wave(.float(time),.float2(observer.size)),maxSampleOffset: .zero)
+//                                                }
+//                                            }
+//                                        }
+//                                        if observer.direction == .left{
+//                                            let nextPage = safePage + 1
+//                                            if viewModel.airingTVs.indices.contains(nextPage){
+//                                                TimelineView(.animation) { tl in
+//                                                    let time = start.distance(to: tl.date)
+//                                                    RecommendationPoster(media: viewModel.airingTVs[nextPage],allowGesture: false)
+//                                                        .environmentObject(observer)
+//                                                        .disabled(true)
+//                                                        .padding(.vertical, 20)
+//                                                        .drawingGroup()
+//                                                        
+//                                                        .distortionEffect(ShaderLibrary.wave(.float(time), .float2(observer.size)),maxSampleOffset: .zero)
+//                                                                                                          
+//                                                }
+//                                                        
+//                                                        
+//                                                        
+//                                                
+//                                            }
+//                                        }
+//                                       
+//                                            
+//                                            RecommendationPoster(media: viewModel.airingTVs[observer.currentPage], allowGesture: true)
+//                                                .environmentObject(observer)
+//                                                .padding(.vertical,20)
+//                                                .drawingGroup()
+//                                    
+//                                                .distortionEffect(ShaderLibrary.leaf(.float(observer.dragX), .float2(observer.size)), maxSampleOffset: .zero)
+////
+//                                                .colorEffect(ShaderLibrary.pageFadeOut(.float(observer.dragX),.float2(observer.size)))
+//                                    }
+//                                }
+                                
+                                    ScrollView(.horizontal, showsIndicators: false) {
                                         
-                                        let safePage = observer.currentPage
-
-                                        if observer.direction == .right{
-                                            let nextPage = safePage - 1
-                                            if viewModel.airingTVs.indices.contains(nextPage){
-                                                RecommendationPoster(media: viewModel.airingTVs[nextPage], allowGesture: false)
-                                                    .environmentObject(observer)
-                                                    .disabled(true)
-   
-                                            }
-                                        }
-                                        if observer.direction == .left{
-                                            let nextPage = safePage + 1
-                                            if viewModel.airingTVs.indices.contains(nextPage){
-                                                RecommendationPoster(media: viewModel.airingTVs[nextPage],allowGesture: false)
-                                                    .environmentObject(observer)
-                                                    .disabled(true)
+                                        HStack(spacing: 0) {
+                                            Spacer().frame(width: 30)
+                                            ForEach(viewModel.airingTVs){ media in
+                                                
+                                                    RecommendationPoster(media: media, allowGesture: false)
+                                                        .environmentObject(observer)
                                                 
                                             }
                                         }
+                                        .padding(.vertical, 20)
+//                                        .drawingGroup()
                                         
                                         
-                                        
-                                        RecommendationPoster(media: viewModel.airingTVs[observer.currentPage], allowGesture: true)
-                                            .environmentObject(observer)
-                                            .colorEffect(ShaderLibrary.pageFadeOut(.float(observer.dragX),.float(observer.screenWidth * observer.widthFactor)))
-                                        
-                                            .onAppear{
-                                                
-                                            }
                                     }
-                                }
+                                    
+                                
+                          
                                 
                                 PageControl(numberOfPages: viewModel.airingTVs.count, currentPage: $observer.currentPage)
                                 

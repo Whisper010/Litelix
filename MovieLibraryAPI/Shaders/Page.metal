@@ -8,10 +8,12 @@
 #include <metal_stdlib>
 using namespace metal;
 
-[[stitchable]] half4 pageFadeOut(float2 pos, half4 color, float posX, float maxX){
+[[stitchable]] half4 pageFadeOut(float2 pos, half4 color, float posX, float2 s){
     
     if (posX <= 0) {
-        if (pos.x >= maxX - abs(posX) && pos.x <= maxX ) {
+        if (pos.x >= s.x - abs(posX) && pos.x <= s.x ) {
+            float progress = abs(posX) /s.x;
+            
             return half4(0,0,0,0);
         }
         return color;

@@ -39,53 +39,58 @@ struct RecommendationPoster: View {
         return 0.7
     }
     
-    
+    @State var start = Date.now
+    @State var imageOpacity: Double = 0.0
     
     var body: some View {
+        
+        
         if let media = media {
             
-            
-            
             ZStack {
+                
                 NavigationLink(destination: MediaDetailView(media: media)){
-                    AsyncImage(url: media.posterURL){ image in
-                        image
-                            .resizable()
-                            .frame(width: screenWidth * widthFactor , height: screenHeight * heightFactor)
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                        
-                        
-                    }placeholder: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 10.0).fill(Color.black)
-                                .frame(width: screenWidth * widthFactor,
-                                       height: screenHeight * heightFactor)
-                            ProgressView()
-                                .frame(width: screenWidth * widthFactor,
-                                       height: screenHeight * heightFactor)
-                        }
-                    }
                     
-                    .gesture( allowGesture ?
-                              dragPageGesture(observer: observer)
-                              : nil
-                              
-                    )
+                        AsyncImage(url: media.posterURL){ image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+
+                        }placeholder: {
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 10.0).fill(Color.black)
+                                ProgressView()
+                                
+                            }.frame(width: screenWidth * widthFactor, height: screenHeight * heightFactor)
+                        }
+                        
+                        
+                        
+                        .gesture( allowGesture ?
+                                  dragPageGesture(observer: observer)
+                                  : nil
+                        )
+                       
+                        
                 }
+                .frame(width: screenWidth * widthFactor, height: screenHeight * heightFactor)
+               
                 .accessibilityLabel(media.titleName )
                 
                 VStack(spacing: 8){
                     Spacer()
                     HStack{
                         Text(media.titleName)
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.heavy)
                             .multilineTextAlignment(.center)
                             .shadow(radius: 5)
+                            .clipped()
                         
                     }
                     .padding([.leading,.trailing])
+                    .frame(width: screenWidth * widthFactor)
                     .gesture(allowGesture ?
                              dragPageGesture(observer: observer)
                              : nil)
@@ -96,6 +101,7 @@ struct RecommendationPoster: View {
                         
                         
                     }
+                    .frame(width: screenWidth * widthFactor)
                     .fontWeight(.medium)
                     .gesture(
                         allowGesture ?
@@ -145,12 +151,10 @@ struct RecommendationPoster: View {
                 }.tint(.white)
                 
             }
-            .clipped()
             .onAppear{
-                observer.screenWidth = Float(screenWidth)
-                observer.widthFactor = Float(widthFactor)
+                observer.size = CGSize(width:screenWidth * widthFactor , height: screenHeight * heightFactor)
             }
-            .opacity(self.opacity)
+           
         }
         
         
@@ -180,13 +184,16 @@ extension View {
                 //
                 
                 if observer.direction == .left && observer.currentPage != observer.numberOfPages - 1 && distance > treshhold  {
-                    withAnimation(.easeInOut(duration: 0.25)){
-                        observer.dragX = -Float(observer.screenWidth * observer.widthFactor)
+                    withAnimation(.easeInOut){
+                        observer.dragX = -Float(observer.size.width)
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        
-                        observer.dragX = 0.0
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        observer.direction = .none
                         observer.currentPage += 1
+                      
+                            observer.dragX = 0.0
+                        
                     }
                     
                     
@@ -195,17 +202,19 @@ extension View {
                     withAnimation(.easeInOut){
                         observer.dragX = 0.0
                     }
+                    
                 }
                 
                 if observer.direction == .right && observer.currentPage != 0 && distance > treshhold {
                     
-                    withAnimation(.easeInOut(duration: 0.25)){
-                        observer.dragX = Float(observer.screenWidth * observer.widthFactor)
-                        
+                    withAnimation(.easeInOut){
+                        observer.dragX = Float(observer.size.width)
+
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        observer.dragX = 0.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        observer.direction = .none
                         observer.currentPage -= 1
+                            observer.dragX = 0.0
                         
                     }
                     
@@ -215,12 +224,13 @@ extension View {
                     withAnimation(.easeInOut) {
                         observer.dragX = 0.001
                     }
+                    
                 }
                 
                 
             }
         
-        
+            
         
         
     }
