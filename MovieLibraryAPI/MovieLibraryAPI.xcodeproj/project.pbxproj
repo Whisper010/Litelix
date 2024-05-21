@@ -12,7 +12,6 @@
 		2301D8C22BDECFC000C92262 /* Wave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8C12BDECFC000C92262 /* Wave.metal */; };
 		2301D8C42BDEED1200C92262 /* Leaf.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8C32BDEED1200C92262 /* Leaf.metal */; };
 		231A9EBB2B029EEA000963C8 /* MovieLibraryAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */; };
-		231A9EBD2B029EEA000963C8 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EBC2B029EEA000963C8 /* DiscoveryView.swift */; };
 		231A9EBF2B029EEB000963C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A9EBE2B029EEB000963C8 /* Assets.xcassets */; };
 		231A9EC22B029EEB000963C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */; };
 		231A9ECC2B029EEB000963C8 /* MovieLibraryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ECB2B029EEB000963C8 /* MovieLibraryAPITests.swift */; };
@@ -37,7 +36,6 @@
 		23BB7F0B2B0D332D00E6AAFE /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */; };
 		23BB7F0D2B0D41A100E6AAFE /* RecommendationPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */; };
 		23BB7F0F2B0D44B100E6AAFE /* NewHotMediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */; };
-		23C3750B2B039EFB0011C454 /* TrendingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750A2B039EFB0011C454 /* TrendingCard.swift */; };
 		23C3750D2B039F490011C454 /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750C2B039F490011C454 /* MediaResult.swift */; };
 		23C3750F2B039F650011C454 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750E2B039F650011C454 /* Media.swift */; };
 		23C375132B04C6F30011C454 /* MediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375122B04C6F30011C454 /* MediaDetailView.swift */; };
@@ -70,7 +68,6 @@
 		2301D8C32BDEED1200C92262 /* Leaf.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Leaf.metal; sourceTree = "<group>"; };
 		231A9EB72B029EEA000963C8 /* MovieLibraryAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLibraryAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibraryAPIApp.swift; sourceTree = "<group>"; };
-		231A9EBC2B029EEA000963C8 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		231A9EBE2B029EEB000963C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		231A9EC72B029EEB000963C8 /* MovieLibraryAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLibraryAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +94,6 @@
 		23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
 		23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPoster.swift; sourceTree = "<group>"; };
 		23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotMediaCard.swift; sourceTree = "<group>"; };
-		23C3750A2B039EFB0011C454 /* TrendingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCard.swift; sourceTree = "<group>"; };
 		23C3750C2B039F490011C454 /* MediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResult.swift; sourceTree = "<group>"; };
 		23C3750E2B039F650011C454 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		23C375122B04C6F30011C454 /* MediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailView.swift; sourceTree = "<group>"; };
@@ -177,7 +173,6 @@
 			children = (
 				231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */,
 				238FF0F82B0B615300259CDA /* ParentView.swift */,
-				238FF1022B0B651200259CDA /* Examples */,
 				23C375112B039FAC0011C454 /* View */,
 				23C375102B039F8F0011C454 /* Model */,
 				237276352BBDE32D00F5FDC9 /* Utilities */,
@@ -287,15 +282,6 @@
 				23C375522B076EAC0011C454 /* LoginView.swift */,
 			);
 			path = Introduction;
-			sourceTree = "<group>";
-		};
-		238FF1022B0B651200259CDA /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				231A9EBC2B029EEA000963C8 /* DiscoveryView.swift */,
-				23C3750A2B039EFB0011C454 /* TrendingCard.swift */,
-			);
-			path = Examples;
 			sourceTree = "<group>";
 		};
 		23AE3CE92B0FFFF100D5D758 /* Details */ = {
@@ -467,7 +453,6 @@
 				2301D8C02BDBE52200C92262 /* Page.metal in Sources */,
 				23BB7F0D2B0D41A100E6AAFE /* RecommendationPoster.swift in Sources */,
 				2301D8C22BDECFC000C92262 /* Wave.metal in Sources */,
-				231A9EBD2B029EEA000963C8 /* DiscoveryView.swift in Sources */,
 				23BB7F092B0D2D6800E6AAFE /* GenreResult.swift in Sources */,
 				238FF1042B0B70AA00259CDA /* MovieListView.swift in Sources */,
 				238FF0F92B0B615300259CDA /* ParentView.swift in Sources */,
@@ -475,7 +460,6 @@
 				2346CDDD2B0E002600B59613 /* MyLitelix.swift in Sources */,
 				238FF0FD2B0B647A00259CDA /* MediaCard.swift in Sources */,
 				231A9EE52B02BF90000963C8 /* MediaViewModel.swift in Sources */,
-				23C3750B2B039EFB0011C454 /* TrendingCard.swift in Sources */,
 				23C375152B0635C80011C454 /* MediaDetailViewModel.swift in Sources */,
 				231A9EBB2B029EEA000963C8 /* MovieLibraryAPIApp.swift in Sources */,
 				23C375532B076EAC0011C454 /* LoginView.swift in Sources */,
