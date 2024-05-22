@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2301D8BE2BDBE4F800C92262 /* Shaders */,
-				231A9EB92B029EEA000963C8 /* MovieLibraryAPI */,
+				231A9EB92B029EEA000963C8 /* Litelix */,
 				231A9ECA2B029EEB000963C8 /* MovieLibraryAPITests */,
 				231A9ED42B029EEB000963C8 /* MovieLibraryAPIUITests */,
 				231A9EB82B029EEA000963C8 /* Products */,
@@ -168,7 +168,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		231A9EB92B029EEA000963C8 /* MovieLibraryAPI */ = {
+		231A9EB92B029EEA000963C8 /* Litelix */ = {
 			isa = PBXGroup;
 			children = (
 				231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */,
@@ -180,7 +180,7 @@
 				2346CDE22B0E7D3F00B59613 /* Extensions.swift */,
 				231A9EC02B029EEB000963C8 /* Preview Content */,
 			);
-			path = MovieLibraryAPI;
+			path = Litelix;
 			sourceTree = "<group>";
 		};
 		231A9EC02B029EEB000963C8 /* Preview Content */ = {
