@@ -1,0 +1,811 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2301D8BD2BDACA2E00C92262 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8BC2BDACA2E00C92262 /* PageControl.swift */; };
+		2301D8C02BDBE52200C92262 /* Page.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8BF2BDBE52200C92262 /* Page.metal */; };
+		2301D8C22BDECFC000C92262 /* Wave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8C12BDECFC000C92262 /* Wave.metal */; };
+		2301D8C42BDEED1200C92262 /* Leaf.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8C32BDEED1200C92262 /* Leaf.metal */; };
+		231A9EBB2B029EEA000963C8 /* LitelixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EBA2B029EEA000963C8 /* LitelixApp.swift */; };
+		231A9EBF2B029EEB000963C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A9EBE2B029EEB000963C8 /* Assets.xcassets */; };
+		231A9EC22B029EEB000963C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */; };
+		231A9ECC2B029EEB000963C8 /* LitelixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ECB2B029EEB000963C8 /* LitelixTests.swift */; };
+		231A9ED62B029EEB000963C8 /* LitelixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ED52B029EEB000963C8 /* LitelixUITests.swift */; };
+		231A9ED82B029EEB000963C8 /* LitelixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ED72B029EEB000963C8 /* LitelixUITestsLaunchTests.swift */; };
+		231A9EE52B02BF90000963C8 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EE42B02BF90000963C8 /* MediaViewModel.swift */; };
+		2346CDD32B0DEEA700B59613 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDD22B0DEEA700B59613 /* User.swift */; };
+		2346CDD52B0DF4D600B59613 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDD42B0DF4D600B59613 /* UserViewModel.swift */; };
+		2346CDDD2B0E002600B59613 /* MyLitelix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDDC2B0E002600B59613 /* MyLitelix.swift */; };
+		2346CDE32B0E7D3F00B59613 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDE22B0E7D3F00B59613 /* Extensions.swift */; };
+		237276342BBDE18000F5FDC9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237276332BBDE18000F5FDC9 /* HttpClient.swift */; };
+		237276372BBDE35400F5FDC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237276362BBDE35400F5FDC9 /* Constants.swift */; };
+		238B6A1E2B0CAA0700D1E7D5 /* NewHotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */; };
+		238FF0F92B0B615300259CDA /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0F82B0B615300259CDA /* ParentView.swift */; };
+		238FF0FB2B0B63BE00259CDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0FA2B0B63BE00259CDA /* HomeView.swift */; };
+		238FF0FD2B0B647A00259CDA /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF0FC2B0B647A00259CDA /* MediaCard.swift */; };
+		238FF1012B0B64D600259CDA /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF1002B0B64C300259CDA /* Intro.swift */; };
+		238FF1042B0B70AA00259CDA /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FF1032B0B70AA00259CDA /* MovieListView.swift */; };
+		2390C6522BF004CF006A3B6E /* Scroll.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2390C6512BF004CF006A3B6E /* Scroll.metal */; };
+		23BB7F072B0D295D00E6AAFE /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F062B0D295D00E6AAFE /* Genre.swift */; };
+		23BB7F092B0D2D6800E6AAFE /* GenreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F082B0D2D6800E6AAFE /* GenreResult.swift */; };
+		23BB7F0B2B0D332D00E6AAFE /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */; };
+		23BB7F0D2B0D41A100E6AAFE /* RecommendationPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */; };
+		23BB7F0F2B0D44B100E6AAFE /* NewHotMediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */; };
+		23C3750D2B039F490011C454 /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750C2B039F490011C454 /* MediaResult.swift */; };
+		23C3750F2B039F650011C454 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3750E2B039F650011C454 /* Media.swift */; };
+		23C375132B04C6F30011C454 /* MediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375122B04C6F30011C454 /* MediaDetailView.swift */; };
+		23C375152B0635C80011C454 /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375142B0635C80011C454 /* MediaDetailViewModel.swift */; };
+		23C375532B076EAC0011C454 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C375522B076EAC0011C454 /* LoginView.swift */; };
+		23F3FBF02BA9AB81006BBE71 /* Gradient.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23F3FBEF2BA9AB81006BBE71 /* Gradient.metal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		231A9EC82B029EEB000963C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 231A9EAF2B029EEA000963C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 231A9EB62B029EEA000963C8;
+			remoteInfo = MovieLibraryAPI;
+		};
+		231A9ED22B029EEB000963C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 231A9EAF2B029EEA000963C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 231A9EB62B029EEA000963C8;
+			remoteInfo = MovieLibraryAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2301D8BC2BDACA2E00C92262 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		2301D8BF2BDBE52200C92262 /* Page.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Page.metal; sourceTree = "<group>"; };
+		2301D8C12BDECFC000C92262 /* Wave.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Wave.metal; sourceTree = "<group>"; };
+		2301D8C32BDEED1200C92262 /* Leaf.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Leaf.metal; sourceTree = "<group>"; };
+		231A9EB72B029EEA000963C8 /* Litelix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Litelix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		231A9EBA2B029EEA000963C8 /* LitelixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixApp.swift; sourceTree = "<group>"; };
+		231A9EBE2B029EEB000963C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		231A9EC72B029EEB000963C8 /* LitelixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LitelixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		231A9ECB2B029EEB000963C8 /* LitelixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixTests.swift; sourceTree = "<group>"; };
+		231A9ED12B029EEB000963C8 /* LitelixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LitelixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		231A9ED52B029EEB000963C8 /* LitelixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixUITests.swift; sourceTree = "<group>"; };
+		231A9ED72B029EEB000963C8 /* LitelixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		231A9EE42B02BF90000963C8 /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
+		2346CDD22B0DEEA700B59613 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2346CDD42B0DF4D600B59613 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		2346CDDC2B0E002600B59613 /* MyLitelix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLitelix.swift; sourceTree = "<group>"; };
+		2346CDE22B0E7D3F00B59613 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		237276332BBDE18000F5FDC9 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		237276362BBDE35400F5FDC9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotView.swift; sourceTree = "<group>"; };
+		238FF0F82B0B615300259CDA /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		238FF0FA2B0B63BE00259CDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		238FF0FC2B0B647A00259CDA /* MediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
+		238FF1002B0B64C300259CDA /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		238FF1032B0B70AA00259CDA /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		2390C6512BF004CF006A3B6E /* Scroll.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Scroll.metal; sourceTree = "<group>"; };
+		23BB7F062B0D295D00E6AAFE /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		23BB7F082B0D2D6800E6AAFE /* GenreResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResult.swift; sourceTree = "<group>"; };
+		23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
+		23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPoster.swift; sourceTree = "<group>"; };
+		23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotMediaCard.swift; sourceTree = "<group>"; };
+		23C3750C2B039F490011C454 /* MediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResult.swift; sourceTree = "<group>"; };
+		23C3750E2B039F650011C454 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		23C375122B04C6F30011C454 /* MediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailView.swift; sourceTree = "<group>"; };
+		23C375142B0635C80011C454 /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
+		23C375522B076EAC0011C454 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		23F3FBEF2BA9AB81006BBE71 /* Gradient.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Gradient.metal; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		231A9EB42B029EEA000963C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		231A9EC42B029EEB000963C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		231A9ECE2B029EEB000963C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2301D8BB2BDAC9A100C92262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2301D8BC2BDACA2E00C92262 /* PageControl.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2301D8BE2BDBE4F800C92262 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				23F3FBEF2BA9AB81006BBE71 /* Gradient.metal */,
+				2301D8BF2BDBE52200C92262 /* Page.metal */,
+				2301D8C12BDECFC000C92262 /* Wave.metal */,
+				2301D8C32BDEED1200C92262 /* Leaf.metal */,
+				2390C6512BF004CF006A3B6E /* Scroll.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		231A9EAE2B029EEA000963C8 = {
+			isa = PBXGroup;
+			children = (
+				2301D8BE2BDBE4F800C92262 /* Shaders */,
+				231A9EB92B029EEA000963C8 /* Litelix */,
+				231A9ECA2B029EEB000963C8 /* LitelixTests */,
+				231A9ED42B029EEB000963C8 /* LitelixUITests */,
+				231A9EB82B029EEA000963C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		231A9EB82B029EEA000963C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				231A9EB72B029EEA000963C8 /* Litelix.app */,
+				231A9EC72B029EEB000963C8 /* LitelixTests.xctest */,
+				231A9ED12B029EEB000963C8 /* LitelixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		231A9EB92B029EEA000963C8 /* Litelix */ = {
+			isa = PBXGroup;
+			children = (
+				231A9EBA2B029EEA000963C8 /* LitelixApp.swift */,
+				238FF0F82B0B615300259CDA /* ParentView.swift */,
+				23C375112B039FAC0011C454 /* View */,
+				23C375102B039F8F0011C454 /* Model */,
+				237276352BBDE32D00F5FDC9 /* Utilities */,
+				231A9EBE2B029EEB000963C8 /* Assets.xcassets */,
+				2346CDE22B0E7D3F00B59613 /* Extensions.swift */,
+				231A9EC02B029EEB000963C8 /* Preview Content */,
+			);
+			path = Litelix;
+			sourceTree = "<group>";
+		};
+		231A9EC02B029EEB000963C8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		231A9ECA2B029EEB000963C8 /* LitelixTests */ = {
+			isa = PBXGroup;
+			children = (
+				231A9ECB2B029EEB000963C8 /* LitelixTests.swift */,
+			);
+			path = LitelixTests;
+			sourceTree = "<group>";
+		};
+		231A9ED42B029EEB000963C8 /* LitelixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				231A9ED52B029EEB000963C8 /* LitelixUITests.swift */,
+				231A9ED72B029EEB000963C8 /* LitelixUITestsLaunchTests.swift */,
+			);
+			path = LitelixUITests;
+			sourceTree = "<group>";
+		};
+		2346CDD12B0D491400B59613 /* New&Hot */ = {
+			isa = PBXGroup;
+			children = (
+				238B6A1D2B0CAA0700D1E7D5 /* NewHotView.swift */,
+				23BB7F0E2B0D44B100E6AAFE /* NewHotMediaCard.swift */,
+			);
+			path = "New&Hot";
+			sourceTree = "<group>";
+		};
+		2346CDD62B0DFEDF00B59613 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2346CDD22B0DEEA700B59613 /* User.swift */,
+				2346CDD42B0DF4D600B59613 /* UserViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2346CDD72B0DFEF400B59613 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				231A9EE42B02BF90000963C8 /* MediaViewModel.swift */,
+				23C375142B0635C80011C454 /* MediaDetailViewModel.swift */,
+				23C3750E2B039F650011C454 /* Media.swift */,
+				23C3750C2B039F490011C454 /* MediaResult.swift */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		2346CDD82B0DFF0B00B59613 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				23BB7F062B0D295D00E6AAFE /* Genre.swift */,
+				23BB7F0A2B0D332D00E6AAFE /* GenreViewModel.swift */,
+				23BB7F082B0D2D6800E6AAFE /* GenreResult.swift */,
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
+		2346CDDB2B0DFF7C00B59613 /* MyLitelix */ = {
+			isa = PBXGroup;
+			children = (
+				2346CDDC2B0E002600B59613 /* MyLitelix.swift */,
+			);
+			path = MyLitelix;
+			sourceTree = "<group>";
+		};
+		237276352BBDE32D00F5FDC9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				237276332BBDE18000F5FDC9 /* HttpClient.swift */,
+				237276362BBDE35400F5FDC9 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		238FF0FE2B0B64A800259CDA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				238FF0FA2B0B63BE00259CDA /* HomeView.swift */,
+				23BB7F0C2B0D41A100E6AAFE /* RecommendationPoster.swift */,
+				238FF1032B0B70AA00259CDA /* MovieListView.swift */,
+				238FF0FC2B0B647A00259CDA /* MediaCard.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		238FF0FF2B0B64BB00259CDA /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				238FF1002B0B64C300259CDA /* Intro.swift */,
+				23C375522B076EAC0011C454 /* LoginView.swift */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
+		23AE3CE92B0FFFF100D5D758 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				23C375122B04C6F30011C454 /* MediaDetailView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		23C375102B039F8F0011C454 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2346CDD72B0DFEF400B59613 /* Media */,
+				2346CDD82B0DFF0B00B59613 /* Genre */,
+				2346CDD62B0DFEDF00B59613 /* User */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23C375112B039FAC0011C454 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				238FF0FF2B0B64BB00259CDA /* Introduction */,
+				238FF0FE2B0B64A800259CDA /* Home */,
+				2346CDD12B0D491400B59613 /* New&Hot */,
+				2346CDDB2B0DFF7C00B59613 /* MyLitelix */,
+				23AE3CE92B0FFFF100D5D758 /* Details */,
+				2301D8BB2BDAC9A100C92262 /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		231A9EB62B029EEA000963C8 /* Litelix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 231A9EDB2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "Litelix" */;
+			buildPhases = (
+				231A9EB32B029EEA000963C8 /* Sources */,
+				231A9EB42B029EEA000963C8 /* Frameworks */,
+				231A9EB52B029EEA000963C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Litelix;
+			productName = MovieLibraryAPI;
+			productReference = 231A9EB72B029EEA000963C8 /* Litelix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		231A9EC62B029EEB000963C8 /* LitelixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 231A9EDE2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixTests" */;
+			buildPhases = (
+				231A9EC32B029EEB000963C8 /* Sources */,
+				231A9EC42B029EEB000963C8 /* Frameworks */,
+				231A9EC52B029EEB000963C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				231A9EC92B029EEB000963C8 /* PBXTargetDependency */,
+			);
+			name = LitelixTests;
+			productName = MovieLibraryAPITests;
+			productReference = 231A9EC72B029EEB000963C8 /* LitelixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		231A9ED02B029EEB000963C8 /* LitelixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 231A9EE12B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixUITests" */;
+			buildPhases = (
+				231A9ECD2B029EEB000963C8 /* Sources */,
+				231A9ECE2B029EEB000963C8 /* Frameworks */,
+				231A9ECF2B029EEB000963C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				231A9ED32B029EEB000963C8 /* PBXTargetDependency */,
+			);
+			name = LitelixUITests;
+			productName = MovieLibraryAPIUITests;
+			productReference = 231A9ED12B029EEB000963C8 /* LitelixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		231A9EAF2B029EEA000963C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					231A9EB62B029EEA000963C8 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					231A9EC62B029EEB000963C8 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 231A9EB62B029EEA000963C8;
+					};
+					231A9ED02B029EEB000963C8 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 231A9EB62B029EEA000963C8;
+					};
+				};
+			};
+			buildConfigurationList = 231A9EB22B029EEA000963C8 /* Build configuration list for PBXProject "Litelix" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 231A9EAE2B029EEA000963C8;
+			productRefGroup = 231A9EB82B029EEA000963C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				231A9EB62B029EEA000963C8 /* Litelix */,
+				231A9EC62B029EEB000963C8 /* LitelixTests */,
+				231A9ED02B029EEB000963C8 /* LitelixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		231A9EB52B029EEA000963C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231A9EC22B029EEB000963C8 /* Preview Assets.xcassets in Resources */,
+				231A9EBF2B029EEB000963C8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		231A9EC52B029EEB000963C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		231A9ECF2B029EEB000963C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		231A9EB32B029EEA000963C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23BB7F0F2B0D44B100E6AAFE /* NewHotMediaCard.swift in Sources */,
+				2346CDD52B0DF4D600B59613 /* UserViewModel.swift in Sources */,
+				23C3750D2B039F490011C454 /* MediaResult.swift in Sources */,
+				238FF0FB2B0B63BE00259CDA /* HomeView.swift in Sources */,
+				238FF1012B0B64D600259CDA /* Intro.swift in Sources */,
+				2301D8C02BDBE52200C92262 /* Page.metal in Sources */,
+				23BB7F0D2B0D41A100E6AAFE /* RecommendationPoster.swift in Sources */,
+				2301D8C22BDECFC000C92262 /* Wave.metal in Sources */,
+				23BB7F092B0D2D6800E6AAFE /* GenreResult.swift in Sources */,
+				238FF1042B0B70AA00259CDA /* MovieListView.swift in Sources */,
+				238FF0F92B0B615300259CDA /* ParentView.swift in Sources */,
+				23BB7F072B0D295D00E6AAFE /* Genre.swift in Sources */,
+				2346CDDD2B0E002600B59613 /* MyLitelix.swift in Sources */,
+				238FF0FD2B0B647A00259CDA /* MediaCard.swift in Sources */,
+				231A9EE52B02BF90000963C8 /* MediaViewModel.swift in Sources */,
+				23C375152B0635C80011C454 /* MediaDetailViewModel.swift in Sources */,
+				231A9EBB2B029EEA000963C8 /* LitelixApp.swift in Sources */,
+				23C375532B076EAC0011C454 /* LoginView.swift in Sources */,
+				2301D8C42BDEED1200C92262 /* Leaf.metal in Sources */,
+				23C3750F2B039F650011C454 /* Media.swift in Sources */,
+				2346CDE32B0E7D3F00B59613 /* Extensions.swift in Sources */,
+				237276342BBDE18000F5FDC9 /* HttpClient.swift in Sources */,
+				23C375132B04C6F30011C454 /* MediaDetailView.swift in Sources */,
+				2301D8BD2BDACA2E00C92262 /* PageControl.swift in Sources */,
+				238B6A1E2B0CAA0700D1E7D5 /* NewHotView.swift in Sources */,
+				23BB7F0B2B0D332D00E6AAFE /* GenreViewModel.swift in Sources */,
+				2390C6522BF004CF006A3B6E /* Scroll.metal in Sources */,
+				2346CDD32B0DEEA700B59613 /* User.swift in Sources */,
+				23F3FBF02BA9AB81006BBE71 /* Gradient.metal in Sources */,
+				237276372BBDE35400F5FDC9 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		231A9EC32B029EEB000963C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231A9ECC2B029EEB000963C8 /* LitelixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		231A9ECD2B029EEB000963C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231A9ED82B029EEB000963C8 /* LitelixUITestsLaunchTests.swift in Sources */,
+				231A9ED62B029EEB000963C8 /* LitelixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		231A9EC92B029EEB000963C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 231A9EB62B029EEA000963C8 /* Litelix */;
+			targetProxy = 231A9EC82B029EEB000963C8 /* PBXContainerItemProxy */;
+		};
+		231A9ED32B029EEB000963C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 231A9EB62B029EEA000963C8 /* Litelix */;
+			targetProxy = 231A9ED22B029EEB000963C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		231A9ED92B029EEB000963C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		231A9EDA2B029EEB000963C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		231A9EDC2B029EEB000963C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Litelix/Preview Content\"";
+				DEVELOPMENT_TEAM = SP96A7HF6V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Litelix;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.Litelix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		231A9EDD2B029EEB000963C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Litelix/Preview Content\"";
+				DEVELOPMENT_TEAM = SP96A7HF6V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Litelix;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.Litelix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		231A9EDF2B029EEB000963C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SP96A7HF6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.MovieLibraryAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Litelix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Litelix";
+			};
+			name = Debug;
+		};
+		231A9EE02B029EEB000963C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SP96A7HF6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.MovieLibraryAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Litelix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Litelix";
+			};
+			name = Release;
+		};
+		231A9EE22B029EEB000963C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SP96A7HF6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.MovieLibraryAPIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MovieLibraryAPI;
+			};
+			name = Debug;
+		};
+		231A9EE32B029EEB000963C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SP96A7HF6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.MovieLibraryAPIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MovieLibraryAPI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		231A9EB22B029EEA000963C8 /* Build configuration list for PBXProject "Litelix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				231A9ED92B029EEB000963C8 /* Debug */,
+				231A9EDA2B029EEB000963C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		231A9EDB2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "Litelix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				231A9EDC2B029EEB000963C8 /* Debug */,
+				231A9EDD2B029EEB000963C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		231A9EDE2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				231A9EDF2B029EEB000963C8 /* Debug */,
+				231A9EE02B029EEB000963C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		231A9EE12B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				231A9EE22B029EEB000963C8 /* Debug */,
+				231A9EE32B029EEB000963C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 231A9EAF2B029EEA000963C8 /* Project object */;
+}
