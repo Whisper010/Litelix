@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/linarzinatullin/Desktop/Litelix github/Litelix/MovieLibraryAPI/Litelix.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
