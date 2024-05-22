@@ -10,7 +10,6 @@ import SwiftUI
 struct MediaDetailView: View {
     
 
-    
     @Environment(\.dismiss) var dismiss
     
     
@@ -47,57 +46,63 @@ struct MediaDetailView: View {
             
       ScrollView{
                 
-                VStack(spacing:12){
+                VStack{
                     Spacer()
-                        .frame(height: screenHeight * bodyHeight)
-                    HStack{
-                        Text(media.media_type == "movie"  ? media.title ?? "" : media.name ?? "")
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .shadow(radius: 10)
-                        Spacer()
-                        //ratings here
-                    }
-                    HStack{
-                        //genre tags
-                        
-                        //running time
-                    }
-                    
-                    HStack{
-                        Text("Overview")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .shadow(radius: 10)
-                        Spacer()
-                        //see all button
-                    }
-                    
-                    Text(media.overview)
-                        .foregroundColor(.secondary)
-                    
-                    HStack{
-                        
-                        Text("Cast & Crew")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .shadow(radius: 10)
-                        Spacer()
-                    }
-                    
-                    ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack{
-                            ForEach(viewModel.profiles){profile in
-                                CastView(castProfile: profile)
-                            }
-                            
+                        .frame(height: screenHeight * bodyHeight * 1.1)
+                    VStack(spacing:12) {
+                        HStack{
+                            Text(media.media_type == "movie"  ? media.title ?? "" : media.name ?? "")
+                                .font(.title)
+                                .fontWeight(.heavy)
+                                .shadow(radius: 10)
+                            Spacer()
+                            //ratings here
                         }
-                    }
+                        HStack{
+                            //genre tags
+                            
+                            //running time
+                        }
+                        
+                        HStack{
+                            Text("Overview")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .shadow(radius: 10)
+                            Spacer()
+                            //see all button
+                        }
+                        
+                        Text(media.overview)
+                            .foregroundColor(.secondary)
+                        
+                        HStack{
+                            
+                            Text("Cast & Crew")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .shadow(radius: 10)
+                            Spacer()
+                        }
+                        
+                        
+                        ScrollView(.horizontal, showsIndicators: false){
+                            LazyHStack{
+                                ForEach(viewModel.profiles){profile in
+                                    CastView(castProfile: profile)
+                                }
+                                
+                            }
+                        }
+                    }.padding([.bottom,.leading, .trailing])
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Material.ultraThin.opacity(0.8)))
                     
                     
-                }.padding()
+                }
+               
                 
             }
+      
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
@@ -107,9 +112,18 @@ struct MediaDetailView: View {
                 Button {
                     dismiss()
                 }label: {
-                    Image(systemName: "chevron.left")
-                        .imageScale(.large)
-                        .fontWeight(.bold)
+                    ZStack {
+                        
+                        
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .foregroundStyle(.white)
+                            .fontWeight(.bold)
+                            .padding(10)
+                        
+                    }.background(Circle()
+                        .fill(Material.ultraThin))
+                       
                 }
             }
         }

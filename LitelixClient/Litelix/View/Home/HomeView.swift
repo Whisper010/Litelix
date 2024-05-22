@@ -103,8 +103,8 @@ struct HomeView: View {
 //                                    
 //                                }
                                 
-//                                ZStack{
-//                                    if viewModel.airingTVs.indices.contains(observer.currentPage){
+                                ZStack{
+                                    if viewModel.airingTVs.indices.contains(observer.currentPage){
 //                                        
 //                                        let safePage = observer.currentPage
 //
@@ -147,38 +147,38 @@ struct HomeView: View {
 //                                        }
 //                                       
 //                                            
-//                                            RecommendationPoster(media: viewModel.airingTVs[observer.currentPage], allowGesture: true)
-//                                                .environmentObject(observer)
-//                                                .padding(.vertical,20)
-//                                                .drawingGroup()
+                                            RecommendationPoster(media: viewModel.airingTVs[observer.currentPage], allowGesture: false)
+                                                .environmentObject(observer)
+                                                .padding(.vertical,20)
+                                                .drawingGroup()
 //                                    
 //                                                .distortionEffect(ShaderLibrary.leaf(.float(observer.dragX), .float2(observer.size)), maxSampleOffset: .zero)
 ////
 //                                                .colorEffect(ShaderLibrary.pageFadeOut(.float(observer.dragX),.float2(observer.size)))
-//                                    }
-//                                }
-                                
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        
-                                        HStack(spacing: 0) {
-                                            Spacer().frame(width: 30)
-                                            ForEach(viewModel.airingTVs){ media in
-                                                
-                                                    RecommendationPoster(media: media, allowGesture: false)
-                                                        .environmentObject(observer)
-                                                
-                                            }
-                                        }
-                                        .padding(.vertical, 20)
-//                                        .drawingGroup()
-                                        
-                                        
                                     }
+                                }
+                                
+//                                    ScrollView(.horizontal, showsIndicators: false) {
+//                                        
+//                                        HStack(spacing: 0) {
+//                                            Spacer().frame(width: 30)
+//                                            ForEach(viewModel.airingTVs){ media in
+//                                                
+//                                                    RecommendationPoster(media: media, allowGesture: false)
+//                                                        .environmentObject(observer)
+//                                                
+//                                            }
+//                                        }
+//                                        .padding(.vertical, 20)
+////                                        .drawingGroup()
+//                                        
+//                                        
+//                                    }
                                     
                                 
                           
                                 
-                                PageControl(numberOfPages: viewModel.airingTVs.count, currentPage: $observer.currentPage)
+//                                PageControl(numberOfPages: viewModel.airingTVs.count, currentPage: $observer.currentPage)
                                 
                                 MovieListView(collection: $viewModel.trendingTVs, titleText: "Trending TV Shows")
                                 MovieListView(collection: $viewModel.trendingMovies, titleText: "Trending Movies")
