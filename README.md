@@ -9,5 +9,5 @@ If the authorization server is shut down, the default credentials are:
 ## Demo
 
 |Intro| Home |
-|----| ---- |
-|![Intro](Docs/Intro.gif)| ![Home](Docs/Home.gif)|
+|----|----|
+|![Intro](Docs/Intro.gif)|![Home](Docs/Home.gif)|
