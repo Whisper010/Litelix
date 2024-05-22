@@ -10,4 +10,4 @@ If the authorization server is shut down, the default credentials are:
 
 |Intro| Home |
 |----|----|
-|![Intro](Docs/Intro.gif)|![Home](Docs/Home.gif)|
+| <img src="Docs/Intro.gif" width="200"/> | <img src="Docs/Home.gif" width="200"/> 
