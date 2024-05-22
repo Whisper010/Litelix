@@ -80,34 +80,36 @@ struct RecommendationPoster: View {
                 
                 VStack(spacing: 8){
                     Spacer()
-                    HStack{
-                        Text(media.titleName)
-                            .font(.title2)
-                            .fontWeight(.heavy)
-                            .multilineTextAlignment(.center)
-                            .shadow(radius: 5)
-                            .clipped()
-                        
-                    }
-                    .padding([.leading,.trailing])
-                    .frame(width: screenWidth * widthFactor)
-                    .gesture(allowGesture ?
-                             dragPageGesture(observer: observer)
-                             : nil)
-                    HStack {
-                        ForEach(media.genreNames, id : \.self){ genreName in
-                            Text(genreName)
+                    
+                    VStack {
+                        HStack{
+                            Text(media.titleName)
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .multilineTextAlignment(.center)
+                                .shadow(radius: 5)
+                                .clipped()
+                            
                         }
+                        .padding([.leading,.trailing])
+                        .gesture(allowGesture ?
+                                 dragPageGesture(observer: observer)
+                                 : nil)
                         
-                        
+                        HStack {
+                            ForEach(media.genreNames, id : \.self){ genreName in
+                                Text(genreName)
+                            }
+                        }
+                        .fontWeight(.medium)
+                        .gesture(
+                            allowGesture ?
+                            dragPageGesture(observer: observer)
+                            : nil
+                        )
                     }
-                    .frame(width: screenWidth * widthFactor)
-                    .fontWeight(.medium)
-                    .gesture(
-                        allowGesture ?
-                        dragPageGesture(observer: observer)
-                        : nil
-                    )
+                    .frame(width: screenWidth * widthFactor * 0.8)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Material.ultraThin.opacity(0.8)))
                     
                     HStack{
                         

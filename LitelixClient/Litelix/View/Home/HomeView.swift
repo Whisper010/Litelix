@@ -150,7 +150,7 @@ struct HomeView: View {
                                             RecommendationPoster(media: viewModel.airingTVs[observer.currentPage], allowGesture: false)
                                                 .environmentObject(observer)
                                                 .padding(.vertical,20)
-                                                .drawingGroup()
+//                                                .drawingGroup()
 //                                    
 //                                                .distortionEffect(ShaderLibrary.leaf(.float(observer.dragX), .float2(observer.size)), maxSampleOffset: .zero)
 ////
