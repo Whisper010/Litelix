@@ -11,7 +11,6 @@ import SwiftUI
 struct MediaCard: View {
     
     
-    
     let item: Media
     
     let screenWidth = UIScreen.main.bounds.width

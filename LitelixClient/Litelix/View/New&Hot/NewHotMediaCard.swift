@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 struct NewHotMediaCard: View {
     
     let media: Media
