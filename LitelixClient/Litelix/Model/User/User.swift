@@ -1,6 +1,6 @@
 //
 //  User.swift
-//  MovieLibraryAPI
+//  Litelix
 //
 //  Created by Linar Zinatullin on 22/11/23.
 //

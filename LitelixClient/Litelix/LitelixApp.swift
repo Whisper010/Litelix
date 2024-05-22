@@ -1,6 +1,6 @@
 //
-//  MovieLibraryAPIApp.swift
-//  MovieLibraryAPI
+//  LitelixApp.swift
+//  Litelix
 //
 //  Created by Linar Zinatullin on 13/11/23.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct MovieLibraryAPIApp: App {
+struct LitelixApp: App {
     
     
     

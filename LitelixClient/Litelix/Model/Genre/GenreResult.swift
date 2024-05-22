@@ -1,6 +1,6 @@
 //
 //  GenreResult.swift
-//  MovieLibraryAPI
+//  Litelix
 //
 //  Created by Linar Zinatullin on 21/11/23.
 //

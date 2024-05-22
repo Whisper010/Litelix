@@ -1,6 +1,6 @@
 //
-//  MovieLibraryAPIUITestsLaunchTests.swift
-//  MovieLibraryAPIUITests
+//  LitelixUITestsLaunchTests.swift
+//  LitelixUITests
 //
 //  Created by Linar Zinatullin on 13/11/23.
 //
