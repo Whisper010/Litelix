@@ -5,3 +5,9 @@ An app that replicate popular streaming service with implemented authentication 
 If the authorization server is shut down, the default credentials are:
 - Username: Admin
 - Password: Admin
+
+## Demo
+
+|Intro|
+|----|
+|![Intro](Docs/Intro.gif)|
