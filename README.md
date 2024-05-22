@@ -8,6 +8,6 @@ If the authorization server is shut down, the default credentials are:
 
 ## Demo
 
-|Intro| Home |
-|----|----|
-| <img src="Docs/Intro.gif" width="200"/> | <img src="Docs/Home.gif" width="200"/> 
+|Intro| Home | Search| New&Hot|
+|----|----| ----|----|
+| ![Intro](Docs/Intro.gif) | ![Home](Docs/Home.gif) |![Search](Docs/Search.gif)|![New&Hot](Docs/New&Hot.gif)|
