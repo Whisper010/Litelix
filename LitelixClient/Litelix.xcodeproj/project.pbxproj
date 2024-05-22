@@ -11,12 +11,12 @@
 		2301D8C02BDBE52200C92262 /* Page.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8BF2BDBE52200C92262 /* Page.metal */; };
 		2301D8C22BDECFC000C92262 /* Wave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8C12BDECFC000C92262 /* Wave.metal */; };
 		2301D8C42BDEED1200C92262 /* Leaf.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2301D8C32BDEED1200C92262 /* Leaf.metal */; };
-		231A9EBB2B029EEA000963C8 /* MovieLibraryAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */; };
+		231A9EBB2B029EEA000963C8 /* LitelixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EBA2B029EEA000963C8 /* LitelixApp.swift */; };
 		231A9EBF2B029EEB000963C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A9EBE2B029EEB000963C8 /* Assets.xcassets */; };
 		231A9EC22B029EEB000963C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */; };
-		231A9ECC2B029EEB000963C8 /* MovieLibraryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ECB2B029EEB000963C8 /* MovieLibraryAPITests.swift */; };
-		231A9ED62B029EEB000963C8 /* MovieLibraryAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ED52B029EEB000963C8 /* MovieLibraryAPIUITests.swift */; };
-		231A9ED82B029EEB000963C8 /* MovieLibraryAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ED72B029EEB000963C8 /* MovieLibraryAPIUITestsLaunchTests.swift */; };
+		231A9ECC2B029EEB000963C8 /* LitelixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ECB2B029EEB000963C8 /* LitelixTests.swift */; };
+		231A9ED62B029EEB000963C8 /* LitelixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ED52B029EEB000963C8 /* LitelixUITests.swift */; };
+		231A9ED82B029EEB000963C8 /* LitelixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9ED72B029EEB000963C8 /* LitelixUITestsLaunchTests.swift */; };
 		231A9EE52B02BF90000963C8 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A9EE42B02BF90000963C8 /* MediaViewModel.swift */; };
 		2346CDD32B0DEEA700B59613 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDD22B0DEEA700B59613 /* User.swift */; };
 		2346CDD52B0DF4D600B59613 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346CDD42B0DF4D600B59613 /* UserViewModel.swift */; };
@@ -66,15 +66,15 @@
 		2301D8BF2BDBE52200C92262 /* Page.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Page.metal; sourceTree = "<group>"; };
 		2301D8C12BDECFC000C92262 /* Wave.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Wave.metal; sourceTree = "<group>"; };
 		2301D8C32BDEED1200C92262 /* Leaf.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Leaf.metal; sourceTree = "<group>"; };
-		231A9EB72B029EEA000963C8 /* MovieLibraryAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLibraryAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibraryAPIApp.swift; sourceTree = "<group>"; };
+		231A9EB72B029EEA000963C8 /* Litelix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Litelix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		231A9EBA2B029EEA000963C8 /* LitelixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixApp.swift; sourceTree = "<group>"; };
 		231A9EBE2B029EEB000963C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		231A9EC12B029EEB000963C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		231A9EC72B029EEB000963C8 /* MovieLibraryAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLibraryAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		231A9ECB2B029EEB000963C8 /* MovieLibraryAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibraryAPITests.swift; sourceTree = "<group>"; };
-		231A9ED12B029EEB000963C8 /* MovieLibraryAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLibraryAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		231A9ED52B029EEB000963C8 /* MovieLibraryAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibraryAPIUITests.swift; sourceTree = "<group>"; };
-		231A9ED72B029EEB000963C8 /* MovieLibraryAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibraryAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		231A9EC72B029EEB000963C8 /* LitelixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LitelixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		231A9ECB2B029EEB000963C8 /* LitelixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixTests.swift; sourceTree = "<group>"; };
+		231A9ED12B029EEB000963C8 /* LitelixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LitelixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		231A9ED52B029EEB000963C8 /* LitelixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixUITests.swift; sourceTree = "<group>"; };
+		231A9ED72B029EEB000963C8 /* LitelixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitelixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		231A9EE42B02BF90000963C8 /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 		2346CDD22B0DEEA700B59613 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2346CDD42B0DF4D600B59613 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -151,9 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				2301D8BE2BDBE4F800C92262 /* Shaders */,
-				231A9EB92B029EEA000963C8 /* MovieLibraryAPI */,
-				231A9ECA2B029EEB000963C8 /* MovieLibraryAPITests */,
-				231A9ED42B029EEB000963C8 /* MovieLibraryAPIUITests */,
+				231A9EB92B029EEA000963C8 /* Litelix */,
+				231A9ECA2B029EEB000963C8 /* LitelixTests */,
+				231A9ED42B029EEB000963C8 /* LitelixUITests */,
 				231A9EB82B029EEA000963C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,17 +161,17 @@
 		231A9EB82B029EEA000963C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				231A9EB72B029EEA000963C8 /* MovieLibraryAPI.app */,
-				231A9EC72B029EEB000963C8 /* MovieLibraryAPITests.xctest */,
-				231A9ED12B029EEB000963C8 /* MovieLibraryAPIUITests.xctest */,
+				231A9EB72B029EEA000963C8 /* Litelix.app */,
+				231A9EC72B029EEB000963C8 /* LitelixTests.xctest */,
+				231A9ED12B029EEB000963C8 /* LitelixUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		231A9EB92B029EEA000963C8 /* MovieLibraryAPI */ = {
+		231A9EB92B029EEA000963C8 /* Litelix */ = {
 			isa = PBXGroup;
 			children = (
-				231A9EBA2B029EEA000963C8 /* MovieLibraryAPIApp.swift */,
+				231A9EBA2B029EEA000963C8 /* LitelixApp.swift */,
 				238FF0F82B0B615300259CDA /* ParentView.swift */,
 				23C375112B039FAC0011C454 /* View */,
 				23C375102B039F8F0011C454 /* Model */,
@@ -180,7 +180,7 @@
 				2346CDE22B0E7D3F00B59613 /* Extensions.swift */,
 				231A9EC02B029EEB000963C8 /* Preview Content */,
 			);
-			path = MovieLibraryAPI;
+			path = Litelix;
 			sourceTree = "<group>";
 		};
 		231A9EC02B029EEB000963C8 /* Preview Content */ = {
@@ -191,21 +191,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		231A9ECA2B029EEB000963C8 /* MovieLibraryAPITests */ = {
+		231A9ECA2B029EEB000963C8 /* LitelixTests */ = {
 			isa = PBXGroup;
 			children = (
-				231A9ECB2B029EEB000963C8 /* MovieLibraryAPITests.swift */,
+				231A9ECB2B029EEB000963C8 /* LitelixTests.swift */,
 			);
-			path = MovieLibraryAPITests;
+			path = LitelixTests;
 			sourceTree = "<group>";
 		};
-		231A9ED42B029EEB000963C8 /* MovieLibraryAPIUITests */ = {
+		231A9ED42B029EEB000963C8 /* LitelixUITests */ = {
 			isa = PBXGroup;
 			children = (
-				231A9ED52B029EEB000963C8 /* MovieLibraryAPIUITests.swift */,
-				231A9ED72B029EEB000963C8 /* MovieLibraryAPIUITestsLaunchTests.swift */,
+				231A9ED52B029EEB000963C8 /* LitelixUITests.swift */,
+				231A9ED72B029EEB000963C8 /* LitelixUITestsLaunchTests.swift */,
 			);
-			path = MovieLibraryAPIUITests;
+			path = LitelixUITests;
 			sourceTree = "<group>";
 		};
 		2346CDD12B0D491400B59613 /* New&Hot */ = {
@@ -318,9 +318,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		231A9EB62B029EEA000963C8 /* MovieLibraryAPI */ = {
+		231A9EB62B029EEA000963C8 /* Litelix */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 231A9EDB2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "MovieLibraryAPI" */;
+			buildConfigurationList = 231A9EDB2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "Litelix" */;
 			buildPhases = (
 				231A9EB32B029EEA000963C8 /* Sources */,
 				231A9EB42B029EEA000963C8 /* Frameworks */,
@@ -330,14 +330,14 @@
 			);
 			dependencies = (
 			);
-			name = MovieLibraryAPI;
+			name = Litelix;
 			productName = MovieLibraryAPI;
-			productReference = 231A9EB72B029EEA000963C8 /* MovieLibraryAPI.app */;
+			productReference = 231A9EB72B029EEA000963C8 /* Litelix.app */;
 			productType = "com.apple.product-type.application";
 		};
-		231A9EC62B029EEB000963C8 /* MovieLibraryAPITests */ = {
+		231A9EC62B029EEB000963C8 /* LitelixTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 231A9EDE2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "MovieLibraryAPITests" */;
+			buildConfigurationList = 231A9EDE2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixTests" */;
 			buildPhases = (
 				231A9EC32B029EEB000963C8 /* Sources */,
 				231A9EC42B029EEB000963C8 /* Frameworks */,
@@ -348,14 +348,14 @@
 			dependencies = (
 				231A9EC92B029EEB000963C8 /* PBXTargetDependency */,
 			);
-			name = MovieLibraryAPITests;
+			name = LitelixTests;
 			productName = MovieLibraryAPITests;
-			productReference = 231A9EC72B029EEB000963C8 /* MovieLibraryAPITests.xctest */;
+			productReference = 231A9EC72B029EEB000963C8 /* LitelixTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		231A9ED02B029EEB000963C8 /* MovieLibraryAPIUITests */ = {
+		231A9ED02B029EEB000963C8 /* LitelixUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 231A9EE12B029EEB000963C8 /* Build configuration list for PBXNativeTarget "MovieLibraryAPIUITests" */;
+			buildConfigurationList = 231A9EE12B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixUITests" */;
 			buildPhases = (
 				231A9ECD2B029EEB000963C8 /* Sources */,
 				231A9ECE2B029EEB000963C8 /* Frameworks */,
@@ -366,9 +366,9 @@
 			dependencies = (
 				231A9ED32B029EEB000963C8 /* PBXTargetDependency */,
 			);
-			name = MovieLibraryAPIUITests;
+			name = LitelixUITests;
 			productName = MovieLibraryAPIUITests;
-			productReference = 231A9ED12B029EEB000963C8 /* MovieLibraryAPIUITests.xctest */;
+			productReference = 231A9ED12B029EEB000963C8 /* LitelixUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -394,7 +394,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 231A9EB22B029EEA000963C8 /* Build configuration list for PBXProject "MovieLibraryAPI" */;
+			buildConfigurationList = 231A9EB22B029EEA000963C8 /* Build configuration list for PBXProject "Litelix" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -407,9 +407,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				231A9EB62B029EEA000963C8 /* MovieLibraryAPI */,
-				231A9EC62B029EEB000963C8 /* MovieLibraryAPITests */,
-				231A9ED02B029EEB000963C8 /* MovieLibraryAPIUITests */,
+				231A9EB62B029EEA000963C8 /* Litelix */,
+				231A9EC62B029EEB000963C8 /* LitelixTests */,
+				231A9ED02B029EEB000963C8 /* LitelixUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -461,7 +461,7 @@
 				238FF0FD2B0B647A00259CDA /* MediaCard.swift in Sources */,
 				231A9EE52B02BF90000963C8 /* MediaViewModel.swift in Sources */,
 				23C375152B0635C80011C454 /* MediaDetailViewModel.swift in Sources */,
-				231A9EBB2B029EEA000963C8 /* MovieLibraryAPIApp.swift in Sources */,
+				231A9EBB2B029EEA000963C8 /* LitelixApp.swift in Sources */,
 				23C375532B076EAC0011C454 /* LoginView.swift in Sources */,
 				2301D8C42BDEED1200C92262 /* Leaf.metal in Sources */,
 				23C3750F2B039F650011C454 /* Media.swift in Sources */,
@@ -482,7 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				231A9ECC2B029EEB000963C8 /* MovieLibraryAPITests.swift in Sources */,
+				231A9ECC2B029EEB000963C8 /* LitelixTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,8 +490,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				231A9ED82B029EEB000963C8 /* MovieLibraryAPIUITestsLaunchTests.swift in Sources */,
-				231A9ED62B029EEB000963C8 /* MovieLibraryAPIUITests.swift in Sources */,
+				231A9ED82B029EEB000963C8 /* LitelixUITestsLaunchTests.swift in Sources */,
+				231A9ED62B029EEB000963C8 /* LitelixUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,12 +500,12 @@
 /* Begin PBXTargetDependency section */
 		231A9EC92B029EEB000963C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 231A9EB62B029EEA000963C8 /* MovieLibraryAPI */;
+			target = 231A9EB62B029EEA000963C8 /* Litelix */;
 			targetProxy = 231A9EC82B029EEB000963C8 /* PBXContainerItemProxy */;
 		};
 		231A9ED32B029EEB000963C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 231A9EB62B029EEA000963C8 /* MovieLibraryAPI */;
+			target = 231A9EB62B029EEA000963C8 /* Litelix */;
 			targetProxy = 231A9ED22B029EEB000963C8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -637,7 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieLibraryAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Litelix/Preview Content\"";
 				DEVELOPMENT_TEAM = SP96A7HF6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -652,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = linarzi.MovieLibraryAPI;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.Litelix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -667,7 +667,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieLibraryAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Litelix/Preview Content\"";
 				DEVELOPMENT_TEAM = SP96A7HF6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -682,7 +682,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = linarzi.MovieLibraryAPI;
+				PRODUCT_BUNDLE_IDENTIFIER = linarzi.Litelix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -706,7 +706,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieLibraryAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MovieLibraryAPI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Litelix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Litelix";
 			};
 			name = Debug;
 		};
@@ -726,7 +726,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieLibraryAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MovieLibraryAPI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Litelix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Litelix";
 			};
 			name = Release;
 		};
@@ -769,7 +769,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		231A9EB22B029EEA000963C8 /* Build configuration list for PBXProject "MovieLibraryAPI" */ = {
+		231A9EB22B029EEA000963C8 /* Build configuration list for PBXProject "Litelix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				231A9ED92B029EEB000963C8 /* Debug */,
@@ -778,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		231A9EDB2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "MovieLibraryAPI" */ = {
+		231A9EDB2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "Litelix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				231A9EDC2B029EEB000963C8 /* Debug */,
@@ -787,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		231A9EDE2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "MovieLibraryAPITests" */ = {
+		231A9EDE2B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				231A9EDF2B029EEB000963C8 /* Debug */,
@@ -796,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		231A9EE12B029EEB000963C8 /* Build configuration list for PBXNativeTarget "MovieLibraryAPIUITests" */ = {
+		231A9EE12B029EEB000963C8 /* Build configuration list for PBXNativeTarget "LitelixUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				231A9EE22B029EEB000963C8 /* Debug */,

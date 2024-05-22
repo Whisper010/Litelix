@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class MovieLibraryAPIUITestsLaunchTests: XCTestCase {
+final class LitelixUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
